@@ -1,5 +1,5 @@
-<!DOCTYPE html><!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,11 +25,18 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             background-color: #3c3c3c;
         }
-        img {
+        .header {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #ffd700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        .container img {
             max-width: 100%;
             height: auto;
             border-radius: 8px;
             margin: 20px 0;
+            border: 2px solid #ffd700;
         }
         .links {
             display: flex;
@@ -40,6 +47,7 @@
             border: 1px solid #555;
             border-radius: 8px;
             background-color: #444;
+            flex-wrap: wrap;
         }
         .links a {
             color: #1e90ff;
@@ -53,12 +61,6 @@
         .links a:hover {
             background-color: #1e90ff;
             color: #fff;
-        }
-        .header {
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: #ffd700;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
         .description {
             font-size: 18px;
@@ -76,10 +78,11 @@
             border: 1px solid #555;
             border-radius: 8px;
             background-color: #444;
-            transition: transform 0.3s;
+            transition: transform 0.3s, background-color 0.3s;
         }
         .grid-item:hover {
             transform: scale(1.05);
+            background-color: #555;
         }
         .grid-item img {
             max-width: 100%;
@@ -97,9 +100,16 @@
         .grid-item a {
             color: #1e90ff;
             text-decoration: none;
-            transition: color 0.3s;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 16px;
+            border: 1px solid #555;
+            border-radius: 8px;
+            transition: background-color 0.3s, color 0.3s;
         }
         .grid-item a:hover {
+            background-color: #1e90ff;
             color: #fff;
         }
         .container::after {
@@ -111,10 +121,32 @@
             margin: 20px auto 0;
             border-radius: 5px;
         }
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 480px) {
+            .links {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .links a {
+                font-size: 14px;
+                padding: 6px 12px;
+            }
+            .description {
+                font-size: 16px;
+            }
+            .header {
+                font-size: 28px;
+            }
+        }
     </style>
 </head>
-  <body>
+<body>
     <div class="container">
+        <h1 class="header">Bienvenido a GarkoDEV</h1>
         <img src="Icon_512_GarkoDEV_Black.png" alt="Icon GarkoDEV">
         <div class="links">
             <a href="https://www.pagina1.com" target="_blank">Home</a>
@@ -124,75 +156,61 @@
         <p class="description">Here you will find the games developed by me. Each game is available in the Play Store with more information and downloads.</p>
         <div class="grid">
             <div class="grid-item">
-                <img src="Icon_OneMillionTaps.png">
+                <img src="Icon_OneMillionTaps.png" alt="One Million Taps">
                 <h3>One Million Taps - Clicker</h3>
                 <p>Descripción breve del juego 1.</p>
-                <a href="https://play.google.com/store/apps/details?id=com.GarkoDEV.OneMillionTaps">See in Play Store</a>
+                <a href="https://play.google.com/store/apps/details?id=com.GarkoDEV.OneMillionTaps" target="_blank">See in Play Store</a>
             </div>
             <div class="grid-item">
-                <img src="Icon_30sToTap.png">
+                <img src="Icon_30sToTap.png" alt="30s to Tap">
                 <h3>30s to Tap - Countdown Game</h3>
                 <p>Descripción breve del juego 2.</p>
                 <a href="https://play.google.com/store/apps/details?id=com.juego2" target="_blank">See in Play Store</a>
             </div>
             <div class="grid-item">
-                <img src="Icon_RandomDice.png">
+                <img src="Icon_RandomDice.png" alt="Random Dice">
                 <h3>Random Dice - Roll the Dice</h3>
                 <p>Descripción breve del juego 3.</p>
                 <a href="https://play.google.com/store/apps/details?id=com.juego3" target="_blank">See in Play Store</a>
             </div>
             <div class="grid-item">
-                <img src="ruta_de_tu_imagen4.jpg">
+                <img src="ruta_de_tu_imagen4.jpg" alt="Juego 4">
                 <h3>Título del Juego 4</h3>
                 <p>Descripción breve del juego 4.</p>
                 <a href="https://play.google.com/store/apps/details?id=com.juego4" target="_blank">See in Play Store</a>
             </div>
             <div class="grid-item">
-                <img src="ruta_de_tu_imagen5.jpg">
+                <img src="ruta_de_tu_imagen5.jpg" alt="Juego 5">
                 <h3>Título del Juego 5</h3>
                 <p>Descripción breve del juego 5.</p>
                 <a href="https://play.google.com/store/apps/details?id=com.juego5" target="_blank">See in Play Store</a>
             </div>
-          <div class="grid-item">
-                <img src="ruta_de_tu_imagen6.jpg">
+            <div class="grid-item">
+                <img src="ruta_de_tu_imagen6.jpg" alt="Juego 6">
                 <h3>Título del Juego 6</h3>
                 <p>Descripción breve del juego 6.</p>
                 <a href="https://play.google.com/store/apps/details?id=com.juego6" target="_blank">See in Play Store</a>
             </div>
             <div class="grid-item">
-                <img src="ruta_de_tu_imagen7.jpg">
+                <img src="ruta_de_tu_imagen7.jpg" alt="Juego 7">
                 <h3>Título del Juego 7</h3>
                 <p>Descripción breve del juego 7.</p>
                 <a href="https://play.google.com/store/apps/details?id=com.juego7" target="_blank">See in Play Store</a>
             </div>
             <div class="grid-item">
-                <img src="ruta_de_tu_imagen7.jpg">
+                <img src="ruta_de_tu_imagen8.jpg" alt="Juego 8">
                 <h3>Título del Juego 8</h3>
                 <p>Descripción breve del juego 8.</p>
                 <a href="https://play.google.com/store/apps/details?id=com.juego8" target="_blank">See in Play Store</a>
             </div>
-          <div class="grid-item">
-                <img src="ruta_de_tu_imagen9.jpg">
+            <div class="grid-item">
+                <img src="ruta_de_tu_imagen9.jpg" alt="Juego 9">
                 <h3>Título del Juego 9</h3>
                 <p>Descripción breve del juego 9.</p>
-                <a href="https://play.google.com/store/apps/details?id=com.juego9 target="_blank">See in Play Store</a>
+                <a href="https://play.google.com/store/apps/details?id=com.juego9" target="_blank">See in Play Store</a>
             </div>
-          <div class="grid-item">
-                <img src="ruta_de_tu_imagen10.jpg">
-                <h3>Título del Juego 10</h3>
-                <p>Descripción breve del juego 10.</p>
-                <a href="https://play.google.com/store/apps/details?id=com.juego10" target="_blank">See in Play Store</a>
-            </div>
-          <div class="grid-item">
-                <img src="ruta_de_tu_imagen7.jpg">
-                <h3>Título del Juego 11</h3>
-                <p>Descripción breve del juego 11.</p>
-                <a href="https://play.google.com/store/apps/details?id=com.juego11" target="_blank">See in Play Store</a>
-            </div>
-          <div class="grid-item">
-                <img src="ruta_de_tu_imagen12.jpg">
-                <h3>Título del Juego 12</h3>
-                <p>Descripción breve del juego 12.</p>
-                <a href="https://play.google.com/store/apps/details?id=com.juego7" target="_blank">See in Play Store</a>
-            </div>
+        </div>
+    </div>
+</body>
+</html>
 
