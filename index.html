@@ -32,7 +32,7 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
         }
         .container img {
-            max-width: 100%;
+            max-width: 80%; /* Reducido el tamaño máximo de la imagen principal */
             height: auto;
             border-radius: 8px;
             margin: 20px 0;
@@ -53,6 +53,7 @@
             color: #1e90ff;
             text-decoration: none;
             font-size: 16px;
+            font-weight: bold; /* Letras en negrita */
             padding: 8px 16px;
             border: 1px solid #555;
             border-radius: 8px;
@@ -61,6 +62,11 @@
         .links a:hover {
             background-color: #1e90ff;
             color: #fff;
+        }
+        .links img {
+            width: 24px; /* Tamaño de los iconos */
+            height: 24px;
+            margin-left: 8px;
         }
         .description {
             font-size: 18px;
@@ -74,6 +80,9 @@
             margin: 20px 0;
         }
         .grid-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centra las imágenes del grid */
             padding: 10px;
             border: 1px solid #555;
             border-radius: 8px;
@@ -85,9 +94,10 @@
             background-color: #555;
         }
         .grid-item img {
-            max-width: 100%;
+            max-width: 80%; /* Reducido el tamaño máximo de las imágenes del grid */
             height: auto;
             border-radius: 8px;
+            margin-bottom: 10px;
         }
         .grid-item h3 {
             margin: 10px 0;
@@ -96,6 +106,7 @@
         .grid-item p {
             margin: 10px 0;
             color: #ccc;
+            text-align: center;
         }
         .grid-item a {
             color: #1e90ff;
@@ -152,6 +163,8 @@
             <a href="https://www.pagina1.com" target="_blank">Home</a>
             <a href="https://www.pagina2.com" target="_blank">Apps & Games</a>
             <a href="https://www.pagina3.com" target="_blank">Terms & Conditions</a>
+            <a href="https://www.instagram.com/garkodev" target="_blank"><img src="Icon_Instagram.png" alt="Instagram"></a>
+            <a href="https://play.google.com/store/apps/dev?id=GarkoDEV" target="_blank"><img src="Icon_PlayStore.png" alt="Play Store"></a>
         </div>
         <p class="description">Here you will find the games developed by me. Each game is available in the Play Store with more information and downloads.</p>
         <div class="grid">
@@ -175,43 +188,43 @@
             </div>
             <div class="grid-item">
                 <img src="Icon_TemperatureConverter.png" alt="Juego 4">
-                <h3>Título del Juego 4</h3>
+                <h3>Temperature Converter</h3>
                 <p>Descripción breve del juego 4.</p>
                 <a href="https://play.google.com/store/apps/details?id=com.GarkoDEV.TemperatureConverter" target="_blank">See in Play Store</a>
             </div>
             <div class="grid-item">
                 <img src="Icon_SlidingPuzzle.png" alt="Juego 5">
-                <h3>Título del Juego 5</h3>
+                <h3>Sliding Puzzle - Numbers</h3>
                 <p>Descripción breve del juego 5.</p>
                 <a href="https://play.google.com/store/apps/details?id=com.GarkoDEV.SlidingPuzzle" target="_blank">See in Play Store</a>
             </div>
             <div class="grid-item">
                 <img src="Icon_OneMillionCountdown.png" alt="Juego 6">
-                <h3>Título del Juego 6</h3>
+                <h3>One Million Countdown - Tapper</h3>
                 <p>Descripción breve del juego 6.</p>
                 <a href="https://play.google.com/store/apps/details?id=com.GarkoDEV.OneMillionCountdown" target="_blank">See in Play Store</a>
             </div>
             <div class="grid-item">
                 <img src="Icon_DodgeTap.png" alt="Juego 7">
-                <h3>Título del Juego 7</h3>
+                <h3>Dodge Tap - Avoid the Blocks</h3>
                 <p>Descripción breve del juego 7.</p>
                 <a href="https://play.google.com/store/apps/details?id=com.GarkoDEV.DodgeTap" target="_blank">See in Play Store</a>
             </div>
             <div class="grid-item">
                 <img src="Icon_OneMillionClicker.png" alt="Juego 8">
-                <h3>Título del Juego 8</h3>
+                <h3>One Million Clicker - Tap Game</h3>
                 <p>Descripción breve del juego 8.</p>
                 <a href="https://play.google.com/store/apps/details?id=com.GarkoDEV.OneMillionClicker" target="_blank">See in Play Store</a>
             </div>
             <div class="grid-item">
                 <img src="Icon_BubblePopIt.png" alt="Juego 9">
-                <h3>Título del Juego 9</h3>
+                <h3>Bubble Pop It! - Clicker</h3>
                 <p>Descripción breve del juego 9.</p>
                 <a href="https://play.google.com/store/apps/details?id=com.GarkoDEV.BubblePopIt" target="_blank">See in Play Store</a>
             </div>
             <div class="grid-item">
                 <img src="Icon_Coin_Flip.png" alt="Juego 10">
-                <h3>Título del Juego 10</h3>
+                <h3>Coin Flip Simulator</h3>
                 <p>Descripción breve del juego 10.</p>
                 <a href="https://play.google.com/store/apps/details?id=com.GarkoDEV.CoinFlip" target="_blank">See in Play Store</a>
             </div>
@@ -219,4 +232,3 @@
     </div>
 </body>
 </html>
-
