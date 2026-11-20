@@ -2,18 +2,13 @@
 (() => {
   "use strict";
 
-  const playStore = "https://play.google.com/store/apps/developer?id=GarkoDEV";
   const games = [
-    ["30s to Tap", "Arcade", "Icon_30sToTap.png", "SixtySecondsToTap", "How many times can you tap in 30 seconds? A quick reflex challenge with a simple goal.", "¿Cuántas veces puedes tocar la pantalla en 30 segundos? Un reto rápido de reflejos con un objetivo sencillo."],
-    ["Bubble Pop It", "Casual", "Icon_BubblePopIt.png", "BubblePopIt", "Pop colorful bubbles and enjoy a satisfying, relaxing break.", "Explota burbujas de colores y disfruta de un descanso relajante."],
-    ["Coin Flip", "Utility", "Icon_Coin_Flip.png", "CoinFlip", "Can't decide? Flip a coin and let chance choose heads or tails.", "¿No sabes qué elegir? Lanza una moneda y deja que el azar decida."],
-    ["Dodge Tap", "Arcade", "Icon_DodgeTap.png", "DodgeTap", "Tap to dodge incoming obstacles and see how long you can last.", "Toca para esquivar obstáculos y descubre cuánto tiempo puedes aguantar."],
-    ["One Million Clicker", "Clicker", "Icon_OneMillionClicker.png", "OneMillionClicker", "Tap your way toward one million and watch your counter grow.", "Toca para llegar al millón y observa cómo aumenta tu contador."],
-    ["One Million Countdown", "Utility", "Icon_OneMillionCountdown.png", "OneMillionCountdown", "Keep track of the countdown to one million with a clear, simple display.", "Sigue la cuenta atrás hasta un millón con una pantalla clara y sencilla."],
-    ["One Million Taps", "Clicker", "Icon_OneMillionTaps.png", "OneMillionTaps", "A tiny tapping challenge: keep going until you reach one million taps.", "Un pequeño reto de toques: sigue hasta alcanzar un millón."],
-    ["Random Dice", "Utility", "Icon_RandomDice.png", "RandomDice", "Roll a virtual die whenever you need a random result.", "Lanza un dado virtual cuando necesites un resultado al azar."],
-    ["Sliding Puzzle", "Puzzle", "Icon_SlidingPuzzle.png", "SlidingPuzzle", "Slide the tiles into order and solve a classic number puzzle.", "Desliza las fichas hasta ordenarlas y resuelve un clásico puzle numérico."],
-    ["Temperature Converter", "Utility", "Icon_TemperatureConverter.png", "TemperatureConverter", "Convert temperatures between Celsius, Fahrenheit and Kelvin.", "Convierte temperaturas entre Celsius, Fahrenheit y Kelvin."]
+    ["Tung Sahur Puzzle", "Puzzle", "TS", "com.GarkoDEV.TungSahurPuzzle", "Solve puzzles in a game featuring Tung Sahur.", "Resuelve puzles en un juego protagonizado por Tung Sahur."],
+    ["Tung Sahur Clicker", "Clicker", "TC", "com.GarkoDEV.TungSahurClicker", "Tap to build your score in this Tung Sahur clicker game.", "Toca para aumentar tu puntuación en este juego clicker de Tung Sahur."],
+    ["Kawaii Capibara Clicker", "Clicker", "KC", "com.GarkoDEV.KawaiiCapibaraClicker", "Tap to grow your score with a kawaii capybara.", "Toca para aumentar tu puntuación con un capibara kawaii."],
+    ["Police Patrol: Highway Pursuit", "Action", "PP", "com.GarkoDEV.PolicePatrolHighwayPursuit", "Join a police patrol in a highway pursuit.", "Únete a una patrulla policial en una persecución por carretera."],
+    ["Coin Flip Simulator", "Simulator", "CF", "com.GarkoDEV.CoinFlip", "Flip a virtual coin and get heads or tails.", "Lanza una moneda virtual y obtén cara o cruz."],
+    ["Random Dice - Tap to Roll", "Utility", "RD", "com.GarkoDEV.RandomDice2", "Tap to roll a virtual die and get a random result.", "Toca para lanzar un dado virtual y obtener un resultado aleatorio."]
   ];
 
   const text = (en, es) => `<span class="en">${en}</span><span class="es">${es}</span>`;
@@ -80,10 +75,9 @@
 
   const list = document.getElementById("games");
   if (list) {
-    list.innerHTML = games.map(([name, category, icon, packageName, en, es]) => {
-      const packageId = `com.GarkoDEV.${packageName}`;
+    list.innerHTML = games.map(([name, category, mark, packageId, en, es], index) => {
       const url = `https://play.google.com/store/apps/details?id=${encodeURIComponent(packageId)}`;
-      return `<li class="card"><img src="${icon}" width="84" height="84" loading="lazy" alt="${name} app icon"><h3>${name}</h3><p class="tag">${category}</p><p>${text(en, es)}</p><a class="btn" href="${url}" target="_blank" rel="noopener noreferrer">${text("View on Google Play", "Ver en Google Play")}</a></li>`;
+      return `<li class="card"><div class="game-mark mark-${index + 1}" aria-hidden="true">${mark}</div><h3>${name}</h3><p class="tag">${category}</p><p>${text(en, es)}</p><a class="btn" href="${url}" target="_blank" rel="noopener noreferrer">${text("View on Google Play", "Ver en Google Play")}</a></li>`;
     }).join("");
   }
 
