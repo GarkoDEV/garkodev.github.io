@@ -1,0 +1,53 @@
+:root{--bg:#14123a;--bg2:#1d1a52;--ink:#f4f1ff;--mute:#b4b0dc;--gold:#ffd54a;--coral:#ff7a6b;--line:#35317a;--r:14px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(900px 500px at 80% -10%,#2c2780 0,transparent 70%),var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;min-height:100vh;display:flex;flex-direction:column}
+main{flex:1}
+a{color:var(--gold)}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+.skip{position:absolute;left:-999px;background:var(--gold);color:#000;padding:.6rem 1rem;z-index:9}
+.skip:focus{left:8px;top:8px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.site{position:sticky;top:0;z-index:5;background:rgba(20,18,58,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;gap:8px 18px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);font-weight:800;text-decoration:none;margin-right:auto;min-height:44px}
+.brand img{width:36px;height:36px;border-radius:9px}
+nav{display:flex;flex-wrap:wrap;gap:4px}
+nav a,.lang button{min-height:44px;display:inline-flex;align-items:center;padding:0 12px;border-radius:10px;color:var(--ink);text-decoration:none;font-weight:600}
+nav a[aria-current]{background:var(--gold);color:#1a1500}
+.lang{display:flex;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.lang button{background:none;border:0;font:inherit;font-weight:700;cursor:pointer;padding:0 14px;border-radius:0;color:var(--mute)}
+.lang button[aria-pressed=true]{background:var(--line);color:var(--ink)}
+html[lang=en] .es,html[lang=es] .en{display:none!important}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center;padding:56px 0 40px}
+.hero h1{font-size:clamp(2rem,5.5vw,3.4rem);line-height:1.1;margin:0 0 14px}
+.hero p{color:var(--mute);max-width:46ch;margin:0 0 22px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{min-height:48px;display:inline-flex;align-items:center;padding:0 20px;border-radius:12px;border:2px solid var(--line);color:var(--ink);text-decoration:none;font-weight:700}
+.btn.main{background:var(--gold);border-color:var(--gold);color:#1a1500}
+.tap{justify-self:center;text-align:center}
+.tap button{width:min(240px,60vw);aspect-ratio:1;border-radius:50%;border:0;cursor:pointer;background:radial-gradient(circle at 35% 30%,#fff3b0,var(--gold) 45%,#e0a800);box-shadow:0 10px 0 #9a6f00,0 18px 40px #0008;color:#3a2a00;font:800 2.6rem/1 system-ui;touch-action:manipulation;transition:transform .08s,box-shadow .08s}
+.tap button:active{transform:translateY(8px);box-shadow:0 2px 0 #9a6f00,0 6px 20px #0008}
+.tap small{display:block;margin-top:22px;color:var(--mute)}
+h2{font-size:1.6rem;margin:40px 0 18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px;padding:0;list-style:none;margin:0}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:18px;display:flex;flex-direction:column;gap:10px}
+.card img{width:84px;height:84px;border-radius:18px;background:#000}
+.card h3{margin:0;font-size:1.1rem;line-height:1.3}
+.card .tag{color:var(--coral);font-weight:700;font-size:.9rem;margin:-6px 0 0}
+.card p{margin:0;color:var(--mute);font-size:.97rem;flex:1}
+.card .btn{justify-content:center;border-color:var(--gold);color:var(--gold)}
+@media(hover:hover){.card:hover{border-color:var(--gold)}.btn:hover{background:var(--line)}.btn.main:hover{background:#ffe27d}nav a:hover:not([aria-current]){background:var(--line)}}
+.contact{background:var(--bg2);border:1px solid var(--line);border-radius:var(--r);padding:24px;margin:44px 0}
+.contact h2{margin-top:0}
+.legal{max-width:72ch;padding:40px 20px 20px}
+.legal h1{margin:0 0 4px;font-size:2rem}
+.legal h2{font-size:1.25rem;margin:30px 0 8px}
+.legal .meta,.legal li,.legal p{color:var(--mute)}
+.legal p,.legal li{color:#d6d3f2}
+.legal .meta{color:var(--mute);font-size:.92rem}
+footer.site{border-top:1px solid var(--line);padding:22px 0;color:var(--mute);font-size:.92rem}
+footer.site .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+footer.site a{color:var(--mute)}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:32px;text-align:center}.hero p{margin-inline:auto}.btns{justify-content:center}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}

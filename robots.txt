@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://garkodev.github.io/sitemap.xml
