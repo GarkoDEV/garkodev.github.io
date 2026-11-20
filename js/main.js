@@ -23,7 +23,7 @@
   if (header) {
     header.innerHTML = `<header class="site"><div class="wrap">
       <a class="brand" href="index.html"><img src="Icon_512_GarkoDEV_Black.png" width="36" height="36" alt=""><span>GarkoDEV</span></a>
-      <nav aria-label="${"Main navigation"}">
+      <nav aria-label="Main navigation">
         <a href="index.html"${active === "home" ? " aria-current=page" : ""}>${text("Home", "Inicio")}</a>
         <a href="index.html#games">${text("Games", "Juegos")}</a>
         <a href="index.html#contact">${text("Contact", "Contacto")}</a>
@@ -31,6 +31,7 @@
         <a href="terms.html"${active === "terms" ? " aria-current=page" : ""}>${text("Terms", "Términos")}</a>
       </nav>
       <div class="lang" aria-label="Language"><button type="button" data-lang="en" aria-pressed="false" lang="en">EN</button><button type="button" data-lang="es" aria-pressed="false" lang="es">ES</button></div>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false"><span class="theme-symbol" aria-hidden="true">☾</span><span class="theme-label">${text("Dark mode", "Modo oscuro")}</span></button>
     </div></header>`;
   }
 
@@ -44,11 +45,38 @@
     document.querySelectorAll(".lang [data-lang]").forEach((button) => {
       button.setAttribute("aria-pressed", String(button.dataset.lang === lang));
     });
+    const toggle = document.querySelector("[data-theme-toggle]");
+    if (toggle) {
+      const dark = document.documentElement.dataset.theme === "dark";
+      toggle.setAttribute("aria-label", dark ? (lang === "es" ? "Cambiar a modo claro" : "Switch to light mode") : (lang === "es" ? "Cambiar a modo oscuro" : "Switch to dark mode"));
+    }
   };
   document.querySelectorAll(".lang [data-lang]").forEach((button) => {
     button.addEventListener("click", () => setLanguage(button.dataset.lang));
   });
   setLanguage(document.documentElement.lang);
+
+  const themeButton = document.querySelector("[data-theme-toggle]");
+  const themeColor = document.querySelector('meta[name="theme-color"]');
+  const updateThemeButton = () => {
+    const dark = document.documentElement.dataset.theme === "dark";
+    if (!themeButton) return;
+    themeButton.setAttribute("aria-pressed", String(dark));
+    themeButton.querySelector(".theme-symbol").textContent = dark ? "☀" : "☾";
+    themeButton.querySelector(".theme-label").innerHTML = dark ? text("Light mode", "Modo claro") : text("Dark mode", "Modo oscuro");
+    themeButton.setAttribute("aria-label", dark ? (document.documentElement.lang === "es" ? "Cambiar a modo claro" : "Switch to light mode") : (document.documentElement.lang === "es" ? "Cambiar a modo oscuro" : "Switch to dark mode"));
+    if (themeColor) themeColor.content = dark ? "#111318" : "#f7f8fc";
+  };
+  if (themeButton) {
+    updateThemeButton();
+    themeButton.addEventListener("click", () => {
+      const dark = document.documentElement.dataset.theme === "dark";
+      if (dark) delete document.documentElement.dataset.theme;
+      else document.documentElement.dataset.theme = "dark";
+      try { localStorage.setItem("theme", dark ? "light" : "dark"); } catch (_) { /* Theme still changes for this visit. */ }
+      updateThemeButton();
+    });
+  }
 
   const list = document.getElementById("games");
   if (list) {
