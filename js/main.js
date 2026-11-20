@@ -3,12 +3,12 @@
   "use strict";
 
   const games = [
-    ["Tung Sahur Puzzle", "Puzzle", "TS", "com.GarkoDEV.TungSahurPuzzle", "Solve puzzles in a game featuring Tung Sahur.", "Resuelve puzles en un juego protagonizado por Tung Sahur."],
-    ["Tung Sahur Clicker", "Clicker", "TC", "com.GarkoDEV.TungSahurClicker", "Tap to build your score in this Tung Sahur clicker game.", "Toca para aumentar tu puntuación en este juego clicker de Tung Sahur."],
-    ["Kawaii Capibara Clicker", "Clicker", "KC", "com.GarkoDEV.KawaiiCapibaraClicker", "Tap to grow your score with a kawaii capybara.", "Toca para aumentar tu puntuación con un capibara kawaii."],
-    ["Police Patrol: Highway Pursuit", "Action", "PP", "com.GarkoDEV.PolicePatrolHighwayPursuit", "Join a police patrol in a highway pursuit.", "Únete a una patrulla policial en una persecución por carretera."],
-    ["Coin Flip Simulator", "Simulator", "CF", "com.GarkoDEV.CoinFlip", "Flip a virtual coin and get heads or tails.", "Lanza una moneda virtual y obtén cara o cruz."],
-    ["Random Dice - Tap to Roll", "Utility", "RD", "com.GarkoDEV.RandomDice2", "Tap to roll a virtual die and get a random result.", "Toca para lanzar un dado virtual y obtener un resultado aleatorio."]
+    ["Tung Sahur Puzzle", "Puzzle", "Icon_TungSahurPuzzle.png", "com.GarkoDEV.TungSahurPuzzle", "Match puzzle pieces, beat the timer, and unlock Tung Sahur artwork.", "Une las piezas, supera el cronómetro y desbloquea ilustraciones de Tung Sahur."],
+    ["Tung Sahur Clicker", "Clicker", "Icon_TungSahurClicker.png", "com.GarkoDEV.TungSahurClicker", "Tap, level up, and unlock funny Tung Sahur evolutions with sound effects.", "Toca, sube de nivel y desbloquea divertidas evoluciones de Tung Sahur con efectos de sonido."],
+    ["Kawaii Capibara Clicker", "Clicker", "Icon_KawaiiCapibaraClicker.png", "com.GarkoDEV.KawaiiCapibaraClicker", "Tap your capybara, level up, and unlock cute evolutions.", "Toca a tu capibara, sube de nivel y desbloquea adorables evoluciones."],
+    ["Police Patrol: Highway Pursuit", "Arcade", "Icon_PolicePatrolHighwayPursuit.png", "com.GarkoDEV.PolicePatrolHighwayPursuit", "Chase through highway traffic, complete missions, and customize your patrol car.", "Persigue entre el tráfico, completa misiones y personaliza tu coche patrulla."],
+    ["Coin Flip Simulator", "Casual", "Icon_CoinFlip.png", "com.GarkoDEV.CoinFlip", "Flip gold or silver coins with animations, sounds, and a heads-and-tails counter.", "Lanza monedas de oro o plata con animaciones, sonidos y un contador de caras y cruces."],
+    ["Random Dice - Tap to Roll", "Casual", "Icon_RandomDice2.png", "com.GarkoDEV.RandomDice2", "Roll 1 to 6 dice with animations, sound, and an automatic total.", "Lanza de 1 a 6 dados con animación, sonido y suma automática."]
   ];
 
   const text = (en, es) => `<span class="en">${en}</span><span class="es">${es}</span>`;
@@ -75,9 +75,9 @@
 
   const list = document.getElementById("games");
   if (list) {
-    list.innerHTML = games.map(([name, category, mark, packageId, en, es], index) => {
+    list.innerHTML = games.map(([name, category, icon, packageId, en, es]) => {
       const url = `https://play.google.com/store/apps/details?id=${encodeURIComponent(packageId)}`;
-      return `<li class="card"><div class="game-mark mark-${index + 1}" aria-hidden="true">${mark}</div><h3>${name}</h3><p class="tag">${category}</p><p>${text(en, es)}</p><a class="btn" href="${url}" target="_blank" rel="noopener noreferrer">${text("View on Google Play", "Ver en Google Play")}</a></li>`;
+      return `<li class="card"><img class="game-icon" src="${icon}" width="84" height="84" loading="lazy" decoding="async" alt="${name} app icon"><h3>${name}</h3><p class="tag">${category}</p><p>${text(en, es)}</p><a class="btn" href="${url}" target="_blank" rel="noopener noreferrer">${text("View on Google Play", "Ver en Google Play")}</a></li>`;
     }).join("");
   }
 

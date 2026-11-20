@@ -61,24 +61,18 @@ html[lang="en"] .es, html[lang="es"] .en { display: none !important; }
 h2 { font-size: 1.65rem; letter-spacing: -.025em; margin: 40px 0 18px; }
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(245px, 1fr)); gap: 18px; padding: 0; list-style: none; margin: 0; }
 .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 20px; display: flex; flex-direction: column; gap: 10px; box-shadow: var(--shadow); transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
-.game-mark { width: 84px; height: 84px; display: grid; place-items: center; border-radius: 24px; background: #e8e5ff; color: #39309d; font-size: 1.45rem; font-weight: 850; letter-spacing: -.05em; box-shadow: inset 0 -4px 0 #0000000c; }
-.mark-2 { background: #fff0df; color: #9b4e00; }
-.mark-3 { background: #ffe7f0; color: #a52c60; }
-.mark-4 { background: #dff1ff; color: #155d91; }
-.mark-5 { background: #fff5ce; color: #765300; }
-.mark-6 { background: #dff5e7; color: #17633a; }
-html[data-theme="dark"] .game-mark { background: #302c53; color: #ded8ff; }
-html[data-theme="dark"] .mark-2 { background: #4a3528; color: #ffd1a2; }
-html[data-theme="dark"] .mark-3 { background: #482c3b; color: #ffc1dd; }
-html[data-theme="dark"] .mark-4 { background: #243b4e; color: #b6e0ff; }
-html[data-theme="dark"] .mark-5 { background: #473b1e; color: #ffe79c; }
-html[data-theme="dark"] .mark-6 { background: #243d30; color: #b4f1c9; }
+.game-icon { width: 84px; height: 84px; border-radius: 20px; background: var(--surface-soft); object-fit: cover; }
 .card h3 { margin: 0; font-size: 1.1rem; line-height: 1.3; }
 .card .tag { align-self: flex-start; color: var(--primary); background: color-mix(in srgb, var(--primary) 11%, var(--surface)); font-weight: 700; font-size: .82rem; padding: 2px 10px; border-radius: 999px; margin: -4px 0 0; }
 .card p { margin: 0; color: var(--mute); font-size: .96rem; flex: 1; }
 .card .btn { margin-top: 8px; color: var(--primary); border-color: color-mix(in srgb, var(--primary) 35%, var(--line)); }
 .contact { background: var(--surface); border: 1px solid var(--line); border-radius: 24px; padding: 28px; margin: 48px 0; box-shadow: var(--shadow); }
 .contact h2 { margin-top: 0; }
+.social-link { gap: 10px; }
+.social-icon { width: 22px; height: 22px; flex: 0 0 22px; }
+.social-icon.play { object-fit: contain; }
+.social-icon.youtube { color: #f03; }
+.social-icon.tiktok { color: var(--ink); }
 .legal { max-width: 76ch; padding: 48px 24px 28px; }
 .legal h1 { margin: 0 0 4px; font-size: clamp(2rem, 4vw, 2.7rem); letter-spacing: -.04em; }
 .legal h2 { font-size: 1.25rem; margin: 30px 0 8px; }
