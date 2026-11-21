@@ -1,21 +1,42 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<base href="/">
 <title>Page not found - GarkoDEV</title>
-<meta name="robots" content="noindex,follow">
-<meta name="theme-color" content="#f7f8fc">
-<link rel="icon" href="assets/img/brand/icon_garkodev.webp" type="image/webp">
-<link rel="stylesheet" href="css/style.css?v=20261120">
+<meta name="description" content="This page does not exist. Go back to the GarkoDEV home page or play one of the free online games.">
+<meta name="robots" content="noindex">
+<meta name="google-adsense-account" content="ca-pub-8471738047534504"><meta name="theme-color" content="#f7f8fc">
+<link rel="icon" href="assets/img/brand/icon_garkodev.webp" type="image/webp"><link rel="stylesheet" href="css/style.css?v=20261120">
 <script>try{document.documentElement.lang=localStorage.getItem("lang")==="es"?"es":"en";if(localStorage.getItem("theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}</script>
+<style>
+.nf{text-align:center;padding:56px 0 28px;max-width:640px;margin:0 auto}
+.nf .coin{width:min(220px,56vw);aspect-ratio:1;margin:0 auto 30px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#fff3b0,var(--accent) 45%,#e0a800);border:8px solid var(--surface);box-shadow:0 12px 0 #9a6f00,0 22px 40px #0003;color:#3a2a00;font:800 3.6rem/1 system-ui,sans-serif;letter-spacing:-.04em;animation:bob 3s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-10px) rotate(-3deg)}}
+.nf h1{font-size:clamp(1.9rem,5vw,2.8rem);line-height:1.1;letter-spacing:-.04em;margin:0 0 12px}
+.nf p{color:var(--mute);margin:0 0 22px}
+.nf h2{font-size:1.1rem;margin:34px 0 12px}
+.nf .btns{justify-content:center}
+@media(prefers-reduced-motion:reduce){.nf .coin{animation:none}}
+</style>
 </head><body>
-<a class="skip" href="#main"><span class="en">Skip to content</span><span class="es">Saltar al contenido</span></a>
 <div id="site-header"></div>
-<noscript><nav class="noscript-nav wrap" aria-label="Main navigation"><a href="./">Home</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav></noscript>
-<main id="main" class="wrap legal" style="text-align:center;">
-  <p class="tag">404</p>
-  <h1><span class="en">Page not found</span><span class="es">Página no encontrada</span></h1>
-  <p><span class="en">That link may be outdated or the page may have moved.</span><span class="es">Puede que el enlace esté desactualizado o que la página se haya movido.</span></p>
-  <p><a class="btn main" href="./"><span class="en">Back to GarkoDEV</span><span class="es">Volver a GarkoDEV</span></a></p>
+<noscript><nav class="noscript-nav wrap" aria-label="Main navigation"><a href="./">Home</a><a href="./#games">Games</a><a href="./#contact">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav></noscript>
+<main id="main" class="wrap">
+<section class="nf">
+<div class="coin" aria-hidden="true">404</div>
+<h1><span class="en">Oops, this page flew away</span><span class="es">Vaya, esta página se ha escapado</span></h1>
+<p><span class="en">The page you are looking for does not exist or has moved. Head back home or try one of my games.</span><span class="es">La página que buscas no existe o ha cambiado de sitio. Vuelve al inicio o prueba alguno de mis juegos.</span></p>
+<div class="btns"><a class="btn main" href="./"><span class="en">Back to home</span><span class="es">Volver al inicio</span></a><a class="btn" href="./#games"><span class="en">See my Android games</span><span class="es">Ver mis juegos Android</span></a></div>
+<h2><span class="en">Or play something right now</span><span class="es">O juega ahora mismo</span></h2>
+<div class="btns">
+<a class="btn en" href="click-speed-test.html">Click speed test</a><a class="btn es" href="test-velocidad-clics.html">Test de clics</a>
+<a class="btn en" href="coin-flip.html">Flip a coin</a><a class="btn es" href="lanzar-moneda.html">Lanzar moneda</a>
+<a class="btn en" href="tap-flyer.html">Tap Flyer</a><a class="btn es" href="juego-tap-flyer.html">Tap Flyer</a>
+<a class="btn en" href="tile-merge.html">Tile Merge</a><a class="btn es" href="puzle-estilo-2048.html">Tile Merge</a>
+<a class="btn en" href="dice-roller.html">Dice roller</a><a class="btn es" href="lanzador-de-dados.html">Lanzar dados</a>
+</div>
+</section>
 </main>
 <div id="site-footer"></div>
 <script src="js/main.js?v=20261120" defer></script>
