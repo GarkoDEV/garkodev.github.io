@@ -3,8 +3,8 @@
   "use strict";
 
   const text = (en, es) => `<span class="en">${en}</span><span class="es">${es}</span>`;
-  const page = location.pathname.split("/").pop() || "index.html";
-  const active = page === "privacy.html" ? "privacy" : page === "terms.html" ? "terms" : page === "404.html" ? "404" : "home";
+  const page = (location.pathname.split("/").pop() || "index").replace(".html", "");
+  const active = ["privacy", "terms", "404"].includes(page) ? page : page === "index" ? "home" : "";
   const header = document.getElementById("site-header");
   if (header) {
     header.innerHTML = `<header class="site"><div class="wrap">
