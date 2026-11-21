@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dice Roller Online - Roll 1 to 6 Dice (d4 to d20) | GarkoDEV</title>
+<meta name="description" content="Roll dice online: choose 1 to 6 dice, from d4 to d20, and see each result and the total instantly. Free dice roller for board games and RPGs.">
+<link rel="canonical" href="https://garkodev.github.io/dice-roller.html">
+<meta property="og:type" content="website"><meta property="og:title" content="Dice Roller Online - GarkoDEV"><meta property="og:description" content="Roll 1 to 6 dice, from d4 to d20, with an automatic total. Free in your browser."><meta property="og:image" content="https://garkodev.github.io/assets/img/brand/icon_garkodev.webp"><meta property="og:url" content="https://garkodev.github.io/dice-roller.html">
+<meta name="twitter:card" content="summary"><meta name="twitter:title" content="Dice Roller Online - GarkoDEV"><meta name="twitter:description" content="Roll 1 to 6 dice, from d4 to d20, with an automatic total. Free in your browser."><meta name="twitter:image" content="https://garkodev.github.io/assets/img/brand/icon_garkodev.webp">
+<meta name="google-adsense-account" content="ca-pub-8471738047534504"><meta name="theme-color" content="#f7f8fc">
+<link rel="icon" href="assets/img/brand/icon_garkodev.webp" type="image/webp"><link rel="stylesheet" href="css/style.css?v=20261120">
+<script>try{document.documentElement.lang=localStorage.getItem("lang")==="es"?"es":"en";if(localStorage.getItem("theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}</script>
+<style>
+.dr-intro{padding:48px 0 8px;max-width:70ch}
+.dr-intro h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.1;letter-spacing:-.04em;margin:0 0 14px}
+.dr-intro p,.dr-info p,.dr-info li{color:var(--mute)}
+.dr-card{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:var(--shadow);margin:24px 0;text-align:center}
+.opt{margin:0 0 14px}
+.opt p{margin:0 0 6px;color:var(--mute);font-size:.9rem;font-weight:700}
+.opt div{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.opt button{min-width:44px;min-height:44px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-weight:700;cursor:pointer}
+.opt button[aria-pressed=true]{background:var(--primary);border-color:var(--primary);color:var(--primary-ink)}
+.dice{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;align-content:center;min-height:100px;margin:20px 0 10px;cursor:pointer}
+.die{width:84px;height:84px;border-radius:18px;background:#fff;border:2px solid var(--line);box-shadow:0 4px 0 #0002,var(--shadow);display:grid;grid-template:repeat(3,1fr)/repeat(3,1fr);padding:10px;color:#1d1b4b}
+.die i{place-self:center;width:15px;height:15px;border-radius:50%}
+.die i.on{background:#1d1b4b}
+.die.n{place-items:center;padding:0;font:800 1.9rem/1 system-ui,sans-serif}
+.die.r{animation:sh .12s infinite alternate}
+@keyframes sh{from{transform:rotate(-9deg) translateY(-4px)}to{transform:rotate(9deg)}}
+.total{font-size:1.1rem;color:var(--mute);margin:6px 0}
+.total b{display:block;font-size:2.6rem;line-height:1.1;color:var(--ink)}
+#res{min-height:1.8em;color:var(--mute);margin-bottom:10px}
+#roll{min-height:56px;font-size:1.15rem;padding:0 36px;cursor:pointer;font-family:inherit}
+#hist{list-style:none;padding:0;margin:16px auto 0;max-width:340px;display:grid;gap:6px;text-align:left}
+#hist li{background:var(--surface-soft);border-radius:12px;padding:6px 12px;font-size:.92rem;color:var(--mute)}
+.dr-info h2{margin-top:34px}
+.dr-info details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 16px;margin:10px 0}
+.dr-info summary{cursor:pointer;font-weight:700;min-height:28px}
+.dr-cta{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:26px;margin:40px 0;box-shadow:var(--shadow)}
+.dr-cta h2{margin-top:0}
+@media(prefers-reduced-motion:reduce){.die.r{animation:none}}
+</style>
+</head><body>
+<a class="skip" href="#main"><span class="en">Skip to content</span><span class="es">Saltar al contenido</span></a>
+<div id="site-header"></div>
+<noscript><nav class="noscript-nav wrap" aria-label="Main navigation"><a href="./">Home</a><a href="./#games">Games</a><a href="./#contact">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav></noscript>
+<main id="main" class="wrap">
+
+<section class="dr-intro">
+<h1><span class="en">Dice Roller Online</span><span class="es">Lanzador de dados online</span></h1>
+<p><span class="en">Roll one to six dice and get every result plus the total instantly. Use classic six-sided dice for board games, or switch to d4, d8, d10, d12 and d20 for tabletop RPGs. It is free and needs no sign-up.</span><span class="es">Lanza de uno a seis dados y obtén cada resultado y el total al instante. Usa dados clásicos de seis caras para juegos de mesa o cambia a d4, d8, d10, d12 y d20 para juegos de rol. Es gratis y no necesita registro.</span></p>
+</section>
+
+<section class="dr-card" aria-labelledby="game-title">
+<h2 id="game-title" style="margin:0 0 14px;font-size:1.2rem"><span class="en">Your dice</span><span class="es">Tus dados</span></h2>
+<div class="opt"><p><span class="en">Number of dice</span><span class="es">Número de dados</span></p><div id="cnt" role="group" aria-label="Number of dice / Número de dados"></div></div>
+<div class="opt"><p><span class="en">Sides</span><span class="es">Caras</span></p><div id="sid" role="group" aria-label="Sides / Caras"></div></div>
+<div class="dice" id="dice" aria-hidden="true"></div>
+<div class="total"><span class="en">Total</span><span class="es">Total</span><b id="total">-</b></div>
+<div id="res" role="status" aria-live="polite"></div>
+<button id="roll" class="btn main" type="button"><span class="en">Roll the dice</span><span class="es">Lanzar los dados</span></button>
+<ul id="hist" aria-label="Last rolls"></ul>
+</section>
+
+<section class="dr-info">
+<h2><span class="en">How it works</span><span class="es">Cómo funciona</span></h2>
+<ol>
+<li><span class="en">Choose how many dice you want (1 to 6) and how many sides they have.</span><span class="es">Elige cuántos dados quieres (de 1 a 6) y cuántas caras tienen.</span></li>
+<li><span class="en">Tap the button or the dice to roll them.</span><span class="es">Toca el botón o los dados para lanzarlos.</span></li>
+<li><span class="en">Each die shows its own result and the total is added up for you. Your last rolls stay listed below.</span><span class="es">Cada dado muestra su resultado y el total se suma automáticamente. Tus últimos lanzamientos quedan en la lista.</span></li>
+</ol>
+<h2><span class="en">Questions</span><span class="es">Preguntas frecuentes</span></h2>
+<details><summary><span class="en">Are the rolls fair?</span><span class="es">¿Son justos los lanzamientos?</span></summary><p><span class="en">Yes. Each die uses your browser's random number generator, so every face is equally likely and every die is independent of the others.</span><span class="es">Sí. Cada dado usa el generador de números aleatorios de tu navegador, así que todas las caras son igual de probables y cada dado es independiente de los demás.</span></p></details>
+<details><summary><span class="en">Can I use it for role-playing games?</span><span class="es">¿Sirve para juegos de rol?</span></summary><p><span class="en">Yes. Pick d20 for attack and skill checks, d4 to d12 for damage, and up to six dice at once for bigger rolls like fireballs.</span><span class="es">Sí. Elige d20 para ataques y pruebas de habilidad, de d4 a d12 para el daño y hasta seis dados a la vez para tiradas grandes.</span></p></details>
+<details><summary><span class="en">Do you store my rolls?</span><span class="es">¿Guardáis mis lanzamientos?</span></summary><p><span class="en">No. Rolls are only shown on your screen while you use the page and are not saved or sent anywhere. See the <a href="privacy.html">Privacy Policy</a>.</span><span class="es">No. Los lanzamientos solo se muestran en tu pantalla mientras usas la página y no se guardan ni se envían a ningún sitio. Consulta la <a href="privacy.html">Política de privacidad</a>.</span></p></details>
+</section>
+
+<section class="dr-cta">
+<img src="assets/img/games/icon_randomdice.webp" width="84" height="84" loading="lazy" decoding="async" alt="Random Dice - Tap to Roll app icon" style="border-radius:20px;margin-bottom:10px">
+<h2><span class="en">Want dice on your phone?</span><span class="es">¿Quieres dados en el móvil?</span></h2>
+<p style="color:var(--mute)"><span class="en">Try Random Dice - Tap to Roll for Android: roll 1 to 6 dice with animation, sound and an automatic total.</span><span class="es">Prueba Random Dice - Tap to Roll para Android: lanza de 1 a 6 dados con animación, sonido y suma automática.</span></p>
+<div class="btns"><a class="btn main" href="https://play.google.com/store/apps/details?id=com.GarkoDEV.RandomDice2" target="_blank" rel="noopener noreferrer"><span class="en">View on Google Play</span><span class="es">Ver en Google Play</span></a><a class="btn" href="./#games"><span class="en">See my games</span><span class="es">Ver mis juegos</span></a></div>
+</section>
+</main>
+<div id="site-footer"></div>
+<script src="js/main.js?v=20261120" defer></script>
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  let cnt = 2, sides = 6, busy = false, hist = [];
+  const rnd = (n) => { const lim = 256 - (256 % n); let x; do { x = crypto.getRandomValues(new Uint8Array(1))[0]; } while (x >= lim); return (x % n) + 1; };
+  const PIPS = { 1: [4], 2: [0, 8], 3: [0, 4, 8], 4: [0, 2, 6, 8], 5: [0, 2, 4, 6, 8], 6: [0, 2, 3, 5, 6, 8] };
+  const dieHTML = (v) => sides === 6
+    ? `<div class="die">${Array.from({ length: 9 }, (_, k) => `<i${PIPS[v].includes(k) ? ' class="on"' : ""}></i>`).join("")}</div>`
+    : `<div class="die n">${v}</div>`;
+  const show = (vals, spin) => {
+    $("dice").innerHTML = vals.map(dieHTML).join("");
+    if (spin) $("dice").querySelectorAll(".die").forEach((d) => d.classList.add("r"));
+  };
+  const idle = () => { show(Array(cnt).fill(1)); $("total").textContent = "-"; $("res").innerHTML = ""; };
+
+  const group = (id, values, get, set, label) => {
+    const box = $(id);
+    box.innerHTML = values.map((v) => `<button type="button" data-v="${v}" aria-pressed="${v === get()}">${label(v)}</button>`).join("");
+    box.querySelectorAll("button").forEach((b) => b.addEventListener("click", () => {
+      if (busy) return;
+      set(Number(b.dataset.v));
+      box.querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+      idle();
+    }));
+  };
+  group("cnt", [1, 2, 3, 4, 5, 6], () => cnt, (v) => { cnt = v; }, (v) => v);
+  group("sid", [4, 6, 8, 10, 12, 20], () => sides, (v) => { sides = v; }, (v) => "d" + v);
+
+  const done = (fin) => {
+    const sum = fin.reduce((a, b) => a + b, 0);
+    $("total").textContent = sum;
+    $("res").textContent = fin.length > 1 ? fin.join(" + ") + " = " + sum : "";
+    hist = [`${fin.length}d${sides}: ${fin.length > 1 ? fin.join(" + ") + " = " + sum : sum}`].concat(hist).slice(0, 8);
+    $("hist").innerHTML = hist.map((h) => `<li>${h}</li>`).join("");
+    busy = false;
+  };
+
+  const roll = () => {
+    if (busy) return;
+    busy = true; $("res").textContent = "";
+    const fin = Array.from({ length: cnt }, () => rnd(sides));
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let n = 0;
+    const tick = () => {
+      if (n++ < 8 && !reduce) { show(Array.from({ length: cnt }, () => rnd(sides)), true); setTimeout(tick, 75); }
+      else { show(fin); done(fin); }
+    };
+    tick();
+  };
+  $("roll").addEventListener("click", roll);
+  $("dice").addEventListener("click", roll);
+  idle();
+})();
+</script>
+</body></html>
