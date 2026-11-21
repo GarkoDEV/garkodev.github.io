@@ -45,7 +45,16 @@
     if (tapButton && tapCount) tapButton.setAttribute("aria-label", lang === "es" ? `Contador de toques: ${tapCount.textContent}` : `Tap counter: ${tapCount.textContent}`);
   };
   document.querySelectorAll(".lang [data-lang]").forEach((button) => {
-    button.addEventListener("click", () => setLanguage(button.dataset.lang));
+    button.addEventListener("click", () => {
+      const target = button.dataset.lang;
+      const alt = document.querySelector(`link[rel="alternate"][hreflang="${target}"]`);
+      if (alt && target !== document.documentElement.lang) {
+        try { localStorage.setItem("lang", target); } catch (_) { /* Storage may be disabled. */ }
+        location.pathname = new URL(alt.href).pathname;
+        return;
+      }
+      setLanguage(target);
+    });
   });
   setLanguage(document.documentElement.lang);
 
