@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flip a Coin Online - Heads or Tails | GarkoDEV</title>
+<meta name="description" content="Flip a coin online: heads or tails with a fair 50/50 result. Choose a gold or silver coin, see your stats and decide in one tap.">
+<link rel="canonical" href="https://garkodev.github.io/coin-flip.html">
+<meta property="og:type" content="website"><meta property="og:title" content="Flip a Coin Online - Heads or Tails - GarkoDEV"><meta property="og:description" content="Heads or tails? Flip a coin online and decide in one tap."><meta property="og:image" content="https://garkodev.github.io/assets/img/brand/icon_garkodev.webp"><meta property="og:url" content="https://garkodev.github.io/coin-flip.html">
+<meta name="twitter:card" content="summary"><meta name="twitter:title" content="Flip a Coin Online - Heads or Tails - GarkoDEV"><meta name="twitter:description" content="Heads or tails? Flip a coin online and decide in one tap."><meta name="twitter:image" content="https://garkodev.github.io/assets/img/brand/icon_garkodev.webp">
+<meta name="google-adsense-account" content="ca-pub-8471738047534504"><meta name="theme-color" content="#f7f8fc">
+<link rel="icon" href="assets/img/brand/icon_garkodev.webp" type="image/webp"><link rel="stylesheet" href="css/style.css?v=20261120">
+<script>try{document.documentElement.lang=localStorage.getItem("lang")==="es"?"es":"en";if(localStorage.getItem("theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}</script>
+<style>
+.cf-intro{padding:48px 0 8px;max-width:70ch}
+.cf-intro h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.1;letter-spacing:-.04em;margin:0 0 14px}
+.cf-intro p,.cf-info p,.cf-info li{color:var(--mute)}
+.cf-card{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:var(--shadow);margin:24px 0;text-align:center}
+.metals{display:flex;justify-content:center;gap:8px;margin-bottom:6px}
+.metals button{min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-weight:700;cursor:pointer}
+.metals button[aria-pressed=true]{background:var(--primary);border-color:var(--primary);color:var(--primary-ink)}
+.cw{perspective:900px;height:210px;display:grid;place-items:center;margin:6px 0 10px}
+.cw.hop{animation:hop 1.2s ease}
+@keyframes hop{40%{transform:translateY(-46px) scale(1.12)}}
+.coin{width:160px;height:160px;position:relative;transform-style:preserve-3d;transition:transform 1.2s cubic-bezier(.2,.7,.2,1);cursor:pointer}
+.coin[data-m=gold]{--c0:#fff3b0;--c1:#ffd54a;--c2:#d59e20;--ct:#5a3f00}
+.coin[data-m=silver]{--c0:#fff;--c1:#cfd4de;--c2:#8f97a8;--ct:#3b4254}
+.face{position:absolute;inset:0;border-radius:50%;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:grid;place-items:center;font:800 1.2rem/1 system-ui,sans-serif;letter-spacing:.05em;color:var(--ct);border:8px solid var(--c2);background:radial-gradient(circle at 35% 30%,var(--c0),var(--c1) 60%,var(--c2));box-shadow:inset 0 0 0 4px #fff6,0 10px 24px #0004}
+.face.t{transform:rotateY(180deg)}
+#res{min-height:2.6em;font-size:1.7rem;font-weight:800;margin:6px 0}
+#flip{min-height:56px;font-size:1.15rem;padding:0 32px;cursor:pointer}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0 12px}
+.stats div{background:var(--surface-soft);border-radius:16px;padding:10px}
+.stats b{display:block;font-size:1.8rem;line-height:1.2}
+.stats span{color:var(--mute);font-size:.85rem}
+#hist{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;list-style:none;padding:0;margin:0 0 10px;min-height:30px}
+#hist li{min-width:30px;height:30px;display:grid;place-items:center;border-radius:50%;background:var(--surface-soft);font-weight:700;font-size:.85rem}
+#reset{min-height:44px;cursor:pointer;font:inherit;background:none;border:0;color:var(--mute);text-decoration:underline}
+.cf-info h2{margin-top:34px}
+.cf-info details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 16px;margin:10px 0}
+.cf-info summary{cursor:pointer;font-weight:700;min-height:28px}
+.cf-cta{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:26px;margin:40px 0;box-shadow:var(--shadow)}
+.cf-cta h2{margin-top:0}
+@media(prefers-reduced-motion:reduce){.coin{transition:none}.cw.hop{animation:none}}
+</style>
+</head><body>
+<a class="skip" href="#main"><span class="en">Skip to content</span><span class="es">Saltar al contenido</span></a>
+<div id="site-header"></div>
+<noscript><nav class="noscript-nav wrap" aria-label="Main navigation"><a href="./">Home</a><a href="./#games">Games</a><a href="./#contact">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav></noscript>
+<main id="main" class="wrap">
+
+<section class="cf-intro">
+<h1><span class="en">Flip a Coin Online</span><span class="es">Lanza una moneda online</span></h1>
+<p><span class="en">Heads or tails? Flip a coin in one tap to settle a decision, pick who goes first or just have fun. Choose a gold or silver coin and keep track of your heads and tails. It is free and needs no sign-up.</span><span class="es">¿Cara o cruz? Lanza una moneda con un toque para decidir algo, elegir quién empieza o simplemente divertirte. Elige una moneda de oro o de plata y lleva la cuenta de tus caras y cruces. Es gratis y no necesita registro.</span></p>
+</section>
+
+<section class="cf-card" aria-labelledby="game-title">
+<h2 id="game-title" style="margin:0 0 14px;font-size:1.2rem"><span class="en">Your coin</span><span class="es">Tu moneda</span></h2>
+<div class="metals" role="group" aria-label="Coin"><button type="button" data-m="gold" aria-pressed="true"><span class="en">Gold</span><span class="es">Oro</span></button><button type="button" data-m="silver" aria-pressed="false"><span class="en">Silver</span><span class="es">Plata</span></button></div>
+<div class="cw" id="cw"><div class="coin" id="coin" data-m="gold"><div class="face h"><span class="en">HEADS</span><span class="es">CARA</span></div><div class="face t"><span class="en">TAILS</span><span class="es">CRUZ</span></div></div></div>
+<div id="res" role="status" aria-live="polite"></div>
+<button id="flip" class="btn main" type="button"><span class="en">Flip the coin</span><span class="es">Lanzar la moneda</span></button>
+<div class="stats">
+<div><b id="h">0</b><span><span class="en">Heads</span><span class="es">Caras</span></span></div>
+<div><b id="t">0</b><span><span class="en">Tails</span><span class="es">Cruces</span></span></div>
+<div><b id="n">0</b><span><span class="en">Flips</span><span class="es">Lanzamientos</span></span></div>
+</div>
+<ul id="hist" aria-label="Last flips"></ul>
+<button id="reset" type="button"><span class="en">Reset stats</span><span class="es">Reiniciar estadísticas</span></button>
+</section>
+
+<section class="cf-info">
+<h2><span class="en">How it works</span><span class="es">Cómo funciona</span></h2>
+<ol>
+<li><span class="en">Pick a gold or silver coin.</span><span class="es">Elige una moneda de oro o de plata.</span></li>
+<li><span class="en">Tap the coin or the button to flip it.</span><span class="es">Toca la moneda o el botón para lanzarla.</span></li>
+<li><span class="en">The result is chosen at random with a 50% chance for heads and 50% for tails, and your stats are saved in this browser.</span><span class="es">El resultado se elige al azar, con un 50 % de probabilidad para cara y un 50 % para cruz, y tus estadísticas se guardan en este navegador.</span></li>
+</ol>
+<h2><span class="en">Questions</span><span class="es">Preguntas frecuentes</span></h2>
+<details><summary><span class="en">Is the coin flip fair?</span><span class="es">¿Es justo el lanzamiento?</span></summary><p><span class="en">Yes. Each flip uses your browser's random number generator, so heads and tails are equally likely and every flip is independent of the previous one.</span><span class="es">Sí. Cada lanzamiento usa el generador de números aleatorios de tu navegador, así que cara y cruz son igual de probables y cada tirada es independiente de la anterior.</span></p></details>
+<details><summary><span class="en">Why do I sometimes get the same result many times in a row?</span><span class="es">¿Por qué a veces sale lo mismo varias veces seguidas?</span></summary><p><span class="en">Streaks are normal in random results. Over a small number of flips you can easily see 4 or 5 of the same side. The balance only evens out over many flips.</span><span class="es">Las rachas son normales en los resultados aleatorios. Con pocos lanzamientos es fácil ver 4 o 5 veces el mismo lado. El equilibrio solo aparece con muchos lanzamientos.</span></p></details>
+<details><summary><span class="en">Do you store my results?</span><span class="es">¿Guardáis mis resultados?</span></summary><p><span class="en">Only on your own device, in your browser's local storage. Nothing is sent to a server. See the <a href="privacy.html">Privacy Policy</a>.</span><span class="es">Solo en tu propio dispositivo, en el almacenamiento local del navegador. No se envía nada a ningún servidor. Consulta la <a href="privacy.html">Política de privacidad</a>.</span></p></details>
+</section>
+
+<section class="cf-cta">
+<img src="assets/img/games/icon_coinflip.webp" width="84" height="84" loading="lazy" decoding="async" alt="Coin Flip Simulator app icon" style="border-radius:20px;margin-bottom:10px">
+<h2><span class="en">Want it on your phone?</span><span class="es">¿La quieres en el móvil?</span></h2>
+<p style="color:var(--mute)"><span class="en">Try Coin Flip Simulator for Android: gold or silver coins with animations, sounds and a heads-and-tails counter.</span><span class="es">Prueba Coin Flip Simulator para Android: monedas de oro o plata con animaciones, sonidos y un contador de caras y cruces.</span></p>
+<div class="btns"><a class="btn main" href="https://play.google.com/store/apps/details?id=com.GarkoDEV.CoinFlip" target="_blank" rel="noopener noreferrer"><span class="en">View on Google Play</span><span class="es">Ver en Google Play</span></a><a class="btn" href="./#games"><span class="en">See my games</span><span class="es">Ver mis juegos</span></a></div>
+</section>
+</main>
+<div id="site-footer"></div>
+<script src="js/main.js?v=20261120" defer></script>
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const coin = $("coin"), wrap = $("cw"), res = $("res"), hist = $("hist"), flipBtn = $("flip");
+  const L = (en, es) => `<span class="en">${en}</span><span class="es">${es}</span>`;
+  const rnd = () => crypto.getRandomValues(new Uint8Array(1))[0];
+  let s = { h: 0, t: 0, seq: [] }, rot = 0, busy = false;
+
+  try {
+    const j = JSON.parse(localStorage.getItem("coin-stats") || "null");
+    if (j && Number.isInteger(j.h) && Number.isInteger(j.t) && Array.isArray(j.seq)) s = j;
+  } catch (_) {}
+  const save = () => { try { localStorage.setItem("coin-stats", JSON.stringify(s)); } catch (_) {} };
+  const draw = () => {
+    $("h").textContent = s.h; $("t").textContent = s.t; $("n").textContent = s.h + s.t;
+    hist.innerHTML = s.seq.slice(-12).map((x) => `<li>${x ? L("H", "C") : L("T", "X")}</li>`).join("");
+  };
+
+  document.querySelectorAll(".metals button").forEach((b) => b.addEventListener("click", () => {
+    coin.dataset.m = b.dataset.m;
+    document.querySelectorAll(".metals button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+  }));
+
+  const flip = () => {
+    if (busy) return;
+    busy = true;
+    const heads = rnd() & 1;
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    res.innerHTML = "";
+    rot = Math.ceil(rot / 360) * 360 + 360 * (3 + (rnd() % 3)) + (heads ? 0 : 180);
+    coin.style.transform = `rotateY(${rot}deg)`;
+    wrap.classList.remove("hop"); void wrap.offsetWidth; wrap.classList.add("hop");
+    setTimeout(() => {
+      if (heads) s.h++; else s.t++;
+      s.seq = s.seq.concat(heads).slice(-50);
+      res.innerHTML = heads ? L("Heads!", "¡Cara!") : L("Tails!", "¡Cruz!");
+      draw(); save();
+      busy = false;
+    }, reduce ? 0 : 1200);
+  };
+  flipBtn.addEventListener("click", flip);
+  coin.addEventListener("click", flip);
+
+  $("reset").addEventListener("click", () => { s = { h: 0, t: 0, seq: [] }; res.innerHTML = ""; draw(); save(); });
+  draw();
+})();
+</script>
+</body></html>
