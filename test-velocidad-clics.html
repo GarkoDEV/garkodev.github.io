@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Test de Velocidad de Clics (CPS) - Juego Online Gratis | GarkoDEV</title>
+<meta name="description" content="¿Qué tan rápido puedes hacer clic? Haz el test de velocidad de clics (CPS) gratis: elige 5, 10 o 30 segundos, toca lo más rápido que puedas y comparte tu marca.">
+<link rel="canonical" href="https://garkodev.github.io/test-velocidad-clics.html"><link rel="alternate" hreflang="en" href="https://garkodev.github.io/click-speed-test.html"><link rel="alternate" hreflang="es" href="https://garkodev.github.io/test-velocidad-clics.html"><link rel="alternate" hreflang="x-default" href="https://garkodev.github.io/click-speed-test.html">
+<meta property="og:type" content="website"><meta property="og:title" content="Test de Velocidad de Clics (CPS) - GarkoDEV"><meta property="og:description" content="¿Cuántos clics por segundo puedes hacer? Reto gratuito de toques en tu navegador."><meta property="og:image" content="https://garkodev.github.io/assets/img/brand/icon_garkodev.webp"><meta property="og:url" content="https://garkodev.github.io/test-velocidad-clics.html">
+<meta name="twitter:card" content="summary"><meta name="twitter:title" content="Test de Velocidad de Clics (CPS) - GarkoDEV"><meta name="twitter:description" content="¿Cuántos clics por segundo puedes hacer? Reto gratuito de toques en tu navegador."><meta name="twitter:image" content="https://garkodev.github.io/assets/img/brand/icon_garkodev.webp">
+<meta name="google-adsense-account" content="ca-pub-8471738047534504"><meta name="theme-color" content="#f7f8fc">
+<link rel="icon" href="assets/img/brand/icon_garkodev.webp" type="image/webp"><link rel="stylesheet" href="css/style.css?v=20261120">
+<script>try{if(localStorage.getItem("theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}</script>
+<style>
+.cps-intro{padding:48px 0 8px;max-width:70ch}
+.cps-intro h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.1;letter-spacing:-.04em;margin:0 0 14px}
+.cps-intro p,.cps-info p,.cps-info li{color:var(--mute)}
+.cps-card{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:var(--shadow);margin:24px 0;text-align:center}
+.durs{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.durs button{min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-weight:700;cursor:pointer}
+.durs button[aria-pressed=true]{background:var(--primary);border-color:var(--primary);color:var(--primary-ink)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}
+.stats div{background:var(--surface-soft);border-radius:16px;padding:10px}
+.stats b{display:block;font-size:1.8rem;line-height:1.2}
+.stats span{color:var(--mute);font-size:.85rem}
+#go{width:100%;min-height:220px;border:0;border-radius:24px;background:var(--accent);color:#3a2a00;font:800 1.6rem/1.2 system-ui,sans-serif;cursor:pointer;touch-action:manipulation;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent;box-shadow:inset 0 -8px 0 #d59e2080;transition:transform .08s}
+#go:active{transform:scale(.985)}
+#res{min-height:3.4em;margin:16px 0 6px;font-size:1.1rem}
+#res strong{font-size:1.5rem}
+#share{margin-top:6px}
+.cps-info h2{margin-top:34px}
+.cps-info details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 16px;margin:10px 0}
+.cps-info summary{cursor:pointer;font-weight:700;min-height:28px}
+.cps-cta{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:26px;margin:40px 0;box-shadow:var(--shadow)}
+.cps-cta h2{margin-top:0}
+</style>
+</head><body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<div id="site-header"></div>
+<noscript><nav class="noscript-nav wrap" aria-label="Navegación principal"><a href="./">Inicio</a><a href="./#games">Juegos</a><a href="./#contact">Contacto</a><a href="privacy.html">Privacidad</a><a href="terms.html">Términos</a></nav></noscript>
+<main id="main" class="wrap">
+
+<section class="cps-intro">
+<h1>Test de velocidad de clics (CPS)</h1>
+<p>¿Cuántos clics por segundo puedes hacer? Elige un tiempo, empieza a tocar y descubre tu CPS (clics por segundo). Funciona con ratón, pantalla táctil o la barra espaciadora. Es gratis y no necesita registro.</p>
+</section>
+
+<section class="cps-card" aria-labelledby="game-title">
+<h2 id="game-title" style="margin:0 0 14px;font-size:1.2rem">Tu reto</h2>
+<div class="durs" role="group" aria-label="Duración">
+<button type="button" data-d="5" aria-pressed="false">5 s</button>
+<button type="button" data-d="10" aria-pressed="true">10 s</button>
+<button type="button" data-d="30" aria-pressed="false">30 s</button>
+</div>
+<div class="stats">
+<div><b id="time">10.0</b><span>Segundos</span></div>
+<div><b id="clicks">0</b><span>Clics</span></div>
+<div><b id="best">-</b><span>Mejor CPS</span></div>
+</div>
+<button id="go" type="button">Toca aquí para empezar</button>
+<div id="res" role="status" aria-live="polite"></div>
+<button id="share" class="btn" type="button" hidden>Compartir mi marca</button>
+</section>
+
+<section class="cps-info">
+<h2>Cómo funciona</h2>
+<ol>
+<li>Elige 5, 10 o 30 segundos.</li>
+<li>Tu primer clic inicia el cronómetro. Sigue tocando hasta que llegue a cero.</li>
+<li>Tu CPS es el número de clics dividido entre los segundos. Tu mejor marca se guarda en este navegador.</li>
+</ol>
+<h2>¿Qué es un buen CPS?</h2>
+<p>La mayoría de personas está entre 4 y 7 CPS. Más de 8 es rápido y por encima de 10 es excepcional. Los tests largos son más difíciles porque la mano se cansa.</p>
+<h2>Preguntas frecuentes</h2>
+<details><summary>¿Qué significa CPS?</summary><p>CPS son las siglas de clics por segundo, una forma sencilla de medir lo rápido que puedes tocar o hacer clic.</p></details>
+<details><summary>¿Puedo jugar en el móvil?</summary><p>Sí. Toca el botón grande con uno o varios dedos. Las marcas pueden variar entre móvil y ratón.</p></details>
+<details><summary>¿Guardáis mis resultados?</summary><p>Solo en tu propio dispositivo, en el almacenamiento local del navegador. No se envía nada a ningún servidor. Consulta la <a href="privacy.html">Política de privacidad</a>.</p></details>
+</section>
+
+<section class="cps-cta">
+<h2>¿Te gustan los juegos de tocar?</h2>
+<p style="color:var(--mute)">Hago juegos Android gratuitos, entre ellos clickers y puzzles. Pruébalos en Google Play.</p>
+<div class="btns"><a class="btn main" href="./#games">Ver mis juegos</a><a class="btn" href="https://play.google.com/store/apps/developer?id=GarkoDEV" target="_blank" rel="noopener noreferrer">Google Play</a></div>
+</section>
+</main>
+<div id="site-footer"></div>
+<script src="js/main.js?v=20261120" defer></script>
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const go = $("go"), timeEl = $("time"), clicksEl = $("clicks"), bestEl = $("best"), res = $("res"), share = $("share");
+  const L = (en, es) => `${es}`;
+  const isEs = () => document.documentElement.lang === "es";
+  let dur = 10, n = 0, t0 = 0, run = false, lock = false, raf = 0, last = 0;
+
+  const key = () => "cps-best-" + dur;
+  const loadBest = () => { try { return parseFloat(localStorage.getItem(key())) || 0; } catch (_) { return 0; } };
+  const showBest = () => { const b = loadBest(); bestEl.textContent = b ? b.toFixed(2) : "-"; };
+  const rank = (c) => c < 4 ? L("Casual tapper", "Tocador casual") : c < 7 ? L("Quick fingers", "Dedos rápidos") : c < 10 ? L("Tap machine", "Máquina de tocar") : L("Superhuman", "Sobrehumano");
+
+  const reset = () => { n = 0; clicksEl.textContent = "0"; timeEl.textContent = dur.toFixed(1); res.innerHTML = ""; share.hidden = true; showBest(); };
+
+  document.querySelectorAll(".durs button").forEach((b) => b.addEventListener("click", () => {
+    if (run) return;
+    dur = Number(b.dataset.d);
+    document.querySelectorAll(".durs button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+    go.innerHTML = L("Click here to start", "Toca aquí para empezar");
+    reset();
+  }));
+
+  const tick = () => {
+    const left = Math.max(0, dur - (performance.now() - t0) / 1000);
+    timeEl.textContent = left.toFixed(1);
+    if (left > 0) raf = requestAnimationFrame(tick); else end();
+  };
+
+  const end = () => {
+    run = false; lock = true;
+    last = n / dur;
+    const prev = loadBest();
+    const record = last > prev;
+    if (record) { try { localStorage.setItem(key(), String(last)); } catch (_) {} }
+    showBest();
+    res.innerHTML = `<strong>${last.toFixed(2)} CPS</strong> · ${n} ${L("clicks", "clics")} · ${rank(last)}` + (record ? `<br>${L("New personal best!", "¡Nueva mejor marca!")}` : "");
+    go.innerHTML = L("Try again", "Intentar de nuevo");
+    share.hidden = false;
+    setTimeout(() => { lock = false; }, 700);
+  };
+
+  const hit = () => {
+    if (lock) return;
+    if (!run) { reset(); run = true; t0 = performance.now(); tick(); }
+    n++; clicksEl.textContent = String(n);
+  };
+
+  go.addEventListener("pointerdown", (e) => { e.preventDefault(); hit(); });
+  go.addEventListener("keydown", (e) => { if (e.key === " " || e.key === "Enter") { e.preventDefault(); if (!e.repeat) hit(); } });
+  go.addEventListener("click", (e) => e.preventDefault());
+
+  share.addEventListener("click", async () => {
+    const msg = isEs()
+      ? `Hice ${last.toFixed(2)} CPS en ${dur} segundos. ¿Me superas?`
+      : `I got ${last.toFixed(2)} CPS in ${dur} seconds. Can you beat me?`;
+    const url = "https://garkodev.github.io/test-velocidad-clics.html";
+    try {
+      if (navigator.share) await navigator.share({ text: msg, url });
+      else { await navigator.clipboard.writeText(msg + " " + url); share.innerHTML = L("Copied!", "¡Copiado!"); setTimeout(() => { share.innerHTML = L("Share my score", "Compartir mi marca"); }, 1800); }
+    } catch (_) { /* Share cancelled or unavailable. */ }
+  });
+
+  showBest();
+})();
+</script>
+</body></html>

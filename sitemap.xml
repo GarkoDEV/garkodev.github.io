@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 <url><loc>https://garkodev.github.io/</loc></url>
 <url><loc>https://garkodev.github.io/privacy.html</loc></url>
 <url><loc>https://garkodev.github.io/terms.html</loc></url>
-<url><loc>https://garkodev.github.io/click-speed-test.html</loc></url>
-<url><loc>https://garkodev.github.io/coin-flip.html</loc></url>
-<url><loc>https://garkodev.github.io/tap-flyer.html</loc></url>
-<url><loc>https://garkodev.github.io/tile-merge.html</loc></url>
-<url><loc>https://garkodev.github.io/dice-roller.html</loc></url>
+<url><loc>https://garkodev.github.io/click-speed-test.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://garkodev.github.io/click-speed-test.html"/><xhtml:link rel="alternate" hreflang="es" href="https://garkodev.github.io/test-velocidad-clics.html"/></url>
+<url><loc>https://garkodev.github.io/test-velocidad-clics.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://garkodev.github.io/click-speed-test.html"/><xhtml:link rel="alternate" hreflang="es" href="https://garkodev.github.io/test-velocidad-clics.html"/></url>
+<url><loc>https://garkodev.github.io/coin-flip.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://garkodev.github.io/coin-flip.html"/><xhtml:link rel="alternate" hreflang="es" href="https://garkodev.github.io/lanzar-moneda.html"/></url>
+<url><loc>https://garkodev.github.io/lanzar-moneda.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://garkodev.github.io/coin-flip.html"/><xhtml:link rel="alternate" hreflang="es" href="https://garkodev.github.io/lanzar-moneda.html"/></url>
+<url><loc>https://garkodev.github.io/tap-flyer.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://garkodev.github.io/tap-flyer.html"/><xhtml:link rel="alternate" hreflang="es" href="https://garkodev.github.io/juego-tap-flyer.html"/></url>
+<url><loc>https://garkodev.github.io/juego-tap-flyer.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://garkodev.github.io/tap-flyer.html"/><xhtml:link rel="alternate" hreflang="es" href="https://garkodev.github.io/juego-tap-flyer.html"/></url>
+<url><loc>https://garkodev.github.io/tile-merge.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://garkodev.github.io/tile-merge.html"/><xhtml:link rel="alternate" hreflang="es" href="https://garkodev.github.io/puzle-estilo-2048.html"/></url>
+<url><loc>https://garkodev.github.io/puzle-estilo-2048.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://garkodev.github.io/tile-merge.html"/><xhtml:link rel="alternate" hreflang="es" href="https://garkodev.github.io/puzle-estilo-2048.html"/></url>
+<url><loc>https://garkodev.github.io/dice-roller.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://garkodev.github.io/dice-roller.html"/><xhtml:link rel="alternate" hreflang="es" href="https://garkodev.github.io/lanzador-de-dados.html"/></url>
+<url><loc>https://garkodev.github.io/lanzador-de-dados.html</loc><xhtml:link rel="alternate" hreflang="en" href="https://garkodev.github.io/dice-roller.html"/><xhtml:link rel="alternate" hreflang="es" href="https://garkodev.github.io/lanzador-de-dados.html"/></url>
 </urlset>

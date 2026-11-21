@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tap Flyer - Juego Online Gratis de Tocar para Volar | GarkoDEV</title>
+<meta name="description" content="Toca para volar entre los huecos en este juego arcade online gratuito. Sin descargas: juega en el móvil o el ordenador y supera tu mejor marca.">
+<link rel="canonical" href="https://garkodev.github.io/juego-tap-flyer.html"><link rel="alternate" hreflang="en" href="https://garkodev.github.io/tap-flyer.html"><link rel="alternate" hreflang="es" href="https://garkodev.github.io/juego-tap-flyer.html"><link rel="alternate" hreflang="x-default" href="https://garkodev.github.io/tap-flyer.html">
+<meta property="og:type" content="website"><meta property="og:title" content="Tap Flyer - Juego Online Gratis de Tocar para Volar - GarkoDEV"><meta property="og:description" content="Toca para volar entre los huecos y supera tu mejor marca. Gratis en tu navegador."><meta property="og:image" content="https://garkodev.github.io/assets/img/brand/icon_garkodev.webp"><meta property="og:url" content="https://garkodev.github.io/juego-tap-flyer.html">
+<meta name="twitter:card" content="summary"><meta name="twitter:title" content="Tap Flyer - Juego Online Gratis de Tocar para Volar - GarkoDEV"><meta name="twitter:description" content="Toca para volar entre los huecos y supera tu mejor marca. Gratis en tu navegador."><meta name="twitter:image" content="https://garkodev.github.io/assets/img/brand/icon_garkodev.webp">
+<meta name="google-adsense-account" content="ca-pub-8471738047534504"><meta name="theme-color" content="#f7f8fc">
+<link rel="icon" href="assets/img/brand/icon_garkodev.webp" type="image/webp"><link rel="stylesheet" href="css/style.css?v=20261120">
+<script>try{if(localStorage.getItem("theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}</script>
+<style>
+.tf-intro{padding:48px 0 8px;max-width:70ch}
+.tf-intro h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.1;letter-spacing:-.04em;margin:0 0 14px}
+.tf-intro p,.tf-info p,.tf-info li{color:var(--mute)}
+.tf-card{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:var(--shadow);margin:24px 0;text-align:center}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;max-width:400px;margin:0 auto 14px}
+.stats div{background:var(--surface-soft);border-radius:16px;padding:10px}
+.stats b{display:block;font-size:1.8rem;line-height:1.2}
+.stats span{color:var(--mute);font-size:.85rem}
+#cv{display:block;width:100%;max-width:400px;height:auto;margin:0 auto;border-radius:18px;background:#1d1b4b;touch-action:none;cursor:pointer;-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none}
+#res{min-height:2.6em;font-size:1.2rem;margin:14px 0 6px}
+#res strong{font-size:1.5rem}
+.tf-info h2{margin-top:34px}
+.tf-info details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 16px;margin:10px 0}
+.tf-info summary{cursor:pointer;font-weight:700;min-height:28px}
+.tf-cta{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:26px;margin:40px 0;box-shadow:var(--shadow)}
+.tf-cta h2{margin-top:0}
+</style>
+</head><body>
+<a class="skip" href="#main">Saltar al contenido</a>
+<div id="site-header"></div>
+<noscript><nav class="noscript-nav wrap" aria-label="Navegación principal"><a href="./">Inicio</a><a href="./#games">Juegos</a><a href="./#contact">Contacto</a><a href="privacy.html">Privacidad</a><a href="terms.html">Términos</a></nav></noscript>
+<main id="main" class="wrap">
+
+<section class="tf-intro">
+<h1>Tap Flyer: toca para volar</h1>
+<p>Guía al pajarito dorado por los huecos entre las tuberías. Cada toque lo hace subir y la gravedad hace el resto. ¿Hasta dónde llegas? Es gratis, funciona en tu navegador y no necesita descarga ni registro.</p>
+</section>
+
+<section class="tf-card" aria-labelledby="game-title">
+<h2 id="game-title" style="margin:0 0 14px;font-size:1.2rem">Tu vuelo</h2>
+<div class="stats"><div><b id="sc">0</b><span>Puntos</span></div><div><b id="bs">0</b><span>Mejor</span></div></div>
+<canvas id="cv" width="720" height="1120" role="img" aria-label="Toca, haz clic o pulsa espacio para aletear"></canvas>
+<div id="res" role="status" aria-live="polite"></div>
+<button id="share" class="btn" type="button" hidden>Compartir mi marca</button>
+</section>
+
+<section class="tf-info">
+<h2>Cómo se juega</h2>
+<ol>
+<li>Toca la pantalla, haz clic en el juego o pulsa la barra espaciadora para aletear.</li>
+<li>Pasa por el hueco de cada par de tuberías para sumar un punto.</li>
+<li>Si tocas una tubería o el suelo, termina la partida. Tu mejor marca se guarda en este navegador.</li>
+</ol>
+<h2>Consejos</h2>
+<p>Usa toques cortos y regulares en vez de machacar la pantalla, y mantén al pájaro cerca del centro del hueco. No mires al pájaro: mira la siguiente tubería.</p>
+<h2>Preguntas frecuentes</h2>
+<details><summary>¿Puedo jugar en el móvil?</summary><p>Sí. El juego se adapta a la pantalla y se controla con un toque en cualquier punto del área de juego.</p></details>
+<details><summary>¿Tengo que instalar algo?</summary><p>No. Funciona directamente en tu navegador. Si te gustan los juegos de tocar, también tienes mis juegos Android gratuitos en Google Play.</p></details>
+<details><summary>¿Guardáis mi puntuación?</summary><p>Solo en tu propio dispositivo, en el almacenamiento local del navegador. No se envía nada a ningún servidor. Consulta la <a href="privacy.html">Política de privacidad</a>.</p></details>
+</section>
+
+<section class="tf-cta">
+<h2>¿Quieres más juegos de tocar?</h2>
+<p style="color:var(--mute)">Hago juegos Android gratuitos, entre ellos clickers, puzzles y arcade. Pruébalos en Google Play.</p>
+<div class="btns"><a class="btn main" href="./#games">Ver mis juegos</a><a class="btn" href="https://play.google.com/store/apps/developer?id=GarkoDEV" target="_blank" rel="noopener noreferrer">Google Play</a></div>
+</section>
+</main>
+<div id="site-footer"></div>
+<script src="js/main.js?v=20261120" defer></script>
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const cv = $("cv"), ctx = cv.getContext("2d");
+  ctx.scale(2, 2);
+  const W = 360, H = 560, G = 64, GAP = 150, PW = 56, R = 14, BX = 90, FLAP = -420, GRAV = 1500, SPEED = 130;
+  const L = (en, es) => `${es}`;
+  const es = () => document.documentElement.lang === "es";
+  let st = "ready", y = H / 2, vy = 0, pipes = [], score = 0, best = 0, t = 0, last = 0, overAt = 0;
+  try { best = parseInt(localStorage.getItem("tapflyer-best"), 10) || 0; } catch (_) {}
+  const stars = Array.from({ length: 30 }, () => [Math.random() * W, Math.random() * (H - G - 20), Math.random() * 1.6 + 0.6]);
+
+  const showStats = () => { $("sc").textContent = score; $("bs").textContent = best; };
+  const reset = () => { st = "ready"; y = H / 2; vy = 0; pipes = []; score = 0; $("res").innerHTML = ""; $("share").hidden = true; showStats(); };
+  const die = () => {
+    st = "over"; overAt = Date.now();
+    if (score > best) { best = score; try { localStorage.setItem("tapflyer-best", String(best)); } catch (_) {} }
+    showStats();
+    $("res").innerHTML = `${L("Game over: ", "Fin del juego: ")}<strong>${score}</strong>`;
+    $("share").hidden = false;
+  };
+  const flap = () => {
+    if (st === "ready") { st = "play"; vy = FLAP; }
+    else if (st === "play") vy = FLAP;
+    else if (Date.now() - overAt > 600) reset();
+  };
+
+  const update = (dt) => {
+    t += dt;
+    if (st === "ready") { y = H / 2 + Math.sin(t * 4) * 8; return; }
+    if (st === "over") { if (y + R < H - G) { vy += GRAV * dt; y = Math.min(y + vy * dt, H - G - R); } return; }
+    vy += GRAV * dt; y += vy * dt;
+    if (y < R) { y = R; vy = 0; }
+    pipes.forEach((p) => { p.x -= SPEED * dt; });
+    const l = pipes[pipes.length - 1];
+    if (!l || l.x <= W - 190) pipes.push({ x: W, top: 60 + Math.random() * (H - G - GAP - 120), p: 0 });
+    if (pipes[0].x < -PW) pipes.shift();
+    for (const p of pipes) {
+      if (!p.p && p.x + PW < BX - R) { p.p = 1; score++; $("sc").textContent = score; }
+      if (BX + R > p.x && BX - R < p.x + PW && (y - R < p.top || y + R > p.top + GAP)) return die();
+    }
+    if (y + R >= H - G) { y = H - G - R; die(); }
+  };
+
+  const draw = () => {
+    ctx.fillStyle = "#1d1b4b"; ctx.fillRect(0, 0, W, H);
+    ctx.fillStyle = "rgba(255,255,255,.35)";
+    stars.forEach((s) => { ctx.beginPath(); ctx.arc(s[0], s[1], s[2], 0, 7); ctx.fill(); });
+    pipes.forEach((p) => {
+      ctx.fillStyle = "#6a5ff0";
+      ctx.fillRect(p.x, 0, PW, p.top); ctx.fillRect(p.x, p.top + GAP, PW, H - G - p.top - GAP);
+      ctx.fillStyle = "#c3baff";
+      ctx.fillRect(p.x - 4, p.top - 16, PW + 8, 16); ctx.fillRect(p.x - 4, p.top + GAP, PW + 8, 16);
+    });
+    ctx.fillStyle = "#2f2a78"; ctx.fillRect(0, H - G, W, G);
+    ctx.fillStyle = "#ffd54a"; ctx.fillRect(0, H - G, W, 6);
+    ctx.save(); ctx.translate(BX, y); ctx.rotate(Math.max(-0.5, Math.min(1.1, vy / 600)));
+    ctx.fillStyle = "#ffd54a"; ctx.beginPath(); ctx.arc(0, 0, R, 0, 7); ctx.fill();
+    ctx.fillStyle = "#d59e20"; ctx.beginPath(); ctx.ellipse(-4, 3, 7, 4, -0.4, 0, 7); ctx.fill();
+    ctx.fillStyle = "#1d1b4b"; ctx.beginPath(); ctx.arc(6, -4, 2.6, 0, 7); ctx.fill();
+    ctx.fillStyle = "#ff7a6b"; ctx.beginPath(); ctx.moveTo(R - 1, 0); ctx.lineTo(R + 8, 3); ctx.lineTo(R - 1, 6); ctx.fill();
+    ctx.restore();
+    ctx.fillStyle = "#fff"; ctx.textAlign = "center";
+    ctx.font = "800 44px system-ui,sans-serif"; ctx.fillText(score, W / 2, 70);
+    if (st === "ready") { ctx.font = "700 20px system-ui,sans-serif"; ctx.fillText(es() ? "Toca para volar" : "Tap to fly", W / 2, H / 2 + 70); }
+    if (st === "over") {
+      ctx.font = "800 28px system-ui,sans-serif"; ctx.fillText(es() ? "¡Chocaste!" : "Crashed!", W / 2, H / 2 - 10);
+      ctx.font = "600 16px system-ui,sans-serif"; ctx.fillText(es() ? "Toca para reintentar" : "Tap to try again", W / 2, H / 2 + 20);
+    }
+  };
+
+  const loop = (ts) => { const dt = Math.min(0.033, (ts - last) / 1000 || 0); last = ts; update(dt); draw(); requestAnimationFrame(loop); };
+
+  cv.addEventListener("pointerdown", (e) => { e.preventDefault(); flap(); });
+  addEventListener("keydown", (e) => {
+    if (["Space", "ArrowUp", "KeyW"].includes(e.code) && !/^(BUTTON|A|INPUT|SUMMARY)$/.test(e.target.tagName)) { e.preventDefault(); if (!e.repeat) flap(); }
+  });
+  $("share").addEventListener("click", async () => {
+    const msg = es() ? `Conseguí ${score} puntos en Tap Flyer. ¿Me superas?` : `I scored ${score} in Tap Flyer. Can you beat me?`;
+    const url = "https://garkodev.github.io/juego-tap-flyer.html", b = $("share");
+    try {
+      if (navigator.share) await navigator.share({ text: msg, url });
+      else { await navigator.clipboard.writeText(msg + " " + url); b.innerHTML = L("Copied!", "¡Copiado!"); setTimeout(() => { b.innerHTML = L("Share my score", "Compartir mi marca"); }, 1800); }
+    } catch (_) {}
+  });
+
+  showStats();
+  requestAnimationFrame(loop);
+})();
+</script>
+</body></html>
