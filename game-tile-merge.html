@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="es"><head>
+<html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Tile Merge: Puzle Estilo 2048 Online Gratis | GarkoDEV</title>
-<meta name="description" content="Desliza y une fichas numeradas hasta llegar a 2048 en este puzle gratuito estilo 2048. Juega online en el móvil o el ordenador con deslizamientos o flechas.">
-<link rel="canonical" href="https://garkodev.github.io/puzle-estilo-2048.html"><link rel="alternate" hreflang="en" href="https://garkodev.github.io/tile-merge.html"><link rel="alternate" hreflang="es" href="https://garkodev.github.io/puzle-estilo-2048.html"><link rel="alternate" hreflang="x-default" href="https://garkodev.github.io/tile-merge.html">
-<meta property="og:type" content="website"><meta property="og:title" content="Tile Merge: Puzle Estilo 2048 - GarkoDEV"><meta property="og:description" content="Desliza y une fichas hasta llegar a 2048. Puzle gratis en tu navegador."><meta property="og:image" content="https://garkodev.github.io/assets/img/share/puzle-estilo-2048.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:url" content="https://garkodev.github.io/puzle-estilo-2048.html">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Tile Merge: Puzle Estilo 2048 - GarkoDEV"><meta name="twitter:description" content="Desliza y une fichas hasta llegar a 2048. Puzle gratis en tu navegador."><meta name="twitter:image" content="https://garkodev.github.io/assets/img/share/puzle-estilo-2048.jpg">
+<title>Tile Merge: 2048-Style Puzzle Game Online | GarkoDEV</title>
+<meta name="description" content="Slide and merge numbered tiles to reach 2048 in this free 2048-style puzzle game. Play online on your phone or computer with swipes or arrow keys.">
+<link rel="canonical" href="https://garkodev.github.io/game-tile-merge.html"><link rel="alternate" hreflang="en" href="https://garkodev.github.io/game-tile-merge.html"><link rel="alternate" hreflang="es" href="https://garkodev.github.io/juego-tile-merge.html"><link rel="alternate" hreflang="x-default" href="https://garkodev.github.io/game-tile-merge.html">
+<meta property="og:type" content="website"><meta property="og:title" content="Tile Merge: 2048-Style Puzzle Game - GarkoDEV"><meta property="og:description" content="Slide and merge tiles to reach 2048. Free puzzle game in your browser."><meta property="og:image" content="https://garkodev.github.io/assets/img/share/game-tile-merge.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:url" content="https://garkodev.github.io/game-tile-merge.html">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Tile Merge: 2048-Style Puzzle Game - GarkoDEV"><meta name="twitter:description" content="Slide and merge tiles to reach 2048. Free puzzle game in your browser."><meta name="twitter:image" content="https://garkodev.github.io/assets/img/share/game-tile-merge.jpg">
 <meta name="google-adsense-account" content="ca-pub-8471738047534504"><meta name="theme-color" content="#f7f8fc">
 <link rel="icon" href="assets/img/brand/icon_garkodev.webp" type="image/webp"><link rel="stylesheet" href="css/style.css?v=20261121">
 <script>try{if(localStorage.getItem("theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}</script>
@@ -47,51 +47,51 @@
 @media(prefers-reduced-motion:reduce){.t,.t.g{transition:none}.t i.new,.t i.pop{animation:none}}
 </style>
 </head><body>
-<a class="skip" href="#main">Saltar al contenido</a>
+<a class="skip" href="#main">Skip to content</a>
 <div id="site-header"></div>
-<noscript><nav class="noscript-nav wrap" aria-label="Navegación principal"><a href="./">Inicio</a><a href="./#games">Juegos</a><a href="./#contact">Contacto</a><a href="privacy.html">Privacidad</a><a href="terms.html">Términos</a></nav></noscript>
+<noscript><nav class="noscript-nav wrap" aria-label="Main navigation"><a href="./">Home</a><a href="./#games">Games</a><a href="./#contact">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav></noscript>
 <main id="main" class="wrap">
 
 <section class="tm-intro">
-<h1>Tile Merge: un puzle estilo 2048</h1>
-<p>Desliza las fichas y une dos números iguales en uno. Sigue uniendo hasta llegar a 2048 y continúa si quieres una puntuación mayor. Es gratis, funciona en tu navegador y se controla con deslizamientos en el móvil o con las flechas en el ordenador.</p>
+<h1>Tile Merge: a 2048-style puzzle</h1>
+<p>Slide the tiles and merge two equal numbers into one. Keep merging to reach 2048, and keep going if you want a higher score. It is free, runs in your browser and works with swipes on your phone or arrow keys on your computer.</p>
 </section>
 
 <section class="tm-card" aria-labelledby="game-title">
-<h2 id="game-title" style="margin:0 0 14px;font-size:1.2rem">Tu tablero</h2>
-<div class="stats"><div><b id="sc">0</b><span>Puntos</span></div><div><b id="bs">0</b><span>Mejor</span></div></div>
-<div class="bar"><button id="new" class="btn main" type="button">Nueva partida</button><button id="undo" class="btn" type="button" disabled>Deshacer</button></div>
-<div class="board" id="board" role="group" aria-label="Tablero de Tile Merge">
+<h2 id="game-title" style="margin:0 0 14px;font-size:1.2rem">Your board</h2>
+<div class="stats"><div><b id="sc">0</b><span>Score</span></div><div><b id="bs">0</b><span>Best</span></div></div>
+<div class="bar"><button id="new" class="btn main" type="button">New game</button><button id="undo" class="btn" type="button" disabled>Undo</button></div>
+<div class="board" id="board" role="group" aria-label="Tile Merge board">
 <div class="cells" aria-hidden="true"><div><i></i></div><div><i></i></div><div><i></i></div><div><i></i></div><div><i></i></div><div><i></i></div><div><i></i></div><div><i></i></div><div><i></i></div><div><i></i></div><div><i></i></div><div><i></i></div><div><i></i></div><div><i></i></div><div><i></i></div><div><i></i></div></div>
 <div id="tiles"></div>
 <div class="ov" id="ov" hidden></div>
 </div>
 <div id="res" role="status" aria-live="polite"></div>
-<button id="share" class="btn" type="button" hidden>Compartir mi marca</button>
+<button id="share" class="btn" type="button" hidden>Share my score</button>
 </section>
 
 <section class="tm-info">
-<h2>Cómo se juega</h2>
+<h2>How to play</h2>
 <ol>
-<li>Desliza el dedo sobre el tablero o usa las flechas (o W, A, S, D) para mover todas las fichas en esa dirección.</li>
-<li>Cuando dos fichas con el mismo número se tocan, se unen en una con el doble de valor y suman a tu puntuación.</li>
-<li>Tras cada movimiento aparece un 2 o un 4 nuevo. La partida termina cuando el tablero está lleno y no quedan uniones posibles.</li>
+<li>Swipe on the board or use the arrow keys (or W, A, S, D) to slide all tiles in that direction.</li>
+<li>When two tiles with the same number touch, they merge into one with double the value and add to your score.</li>
+<li>After every move a new 2 or 4 appears. The game ends when the board is full and no merges are left.</li>
 </ol>
-<h2>Consejos</h2>
-<p>Mantén tu ficha más grande en una esquina y construye a su lado una cadena de números decrecientes. Usa sobre todo dos o tres direcciones y evita deslizar en contra de tu esquina salvo que no tengas otra opción.</p>
-<h2>Preguntas frecuentes</h2>
-<details><summary>¿Cuál es el objetivo?</summary><p>Crear una ficha con el número 2048. Después puedes seguir jugando para conseguir una puntuación aún mayor.</p></details>
-<details><summary>¿Puedo deshacer un movimiento?</summary><p>Sí, el botón Deshacer anula tu último movimiento. Solo se puede deshacer el más reciente.</p></details>
-<details><summary>¿Guardáis mi puntuación?</summary><p>Solo tu mejor marca, en tu propio dispositivo, en el almacenamiento local del navegador. No se envía nada a ningún servidor. Consulta la <a href="privacy.html">Política de privacidad</a>.</p></details>
+<h2>Tips</h2>
+<p>Keep your biggest tile in a corner and build a chain of decreasing numbers next to it. Pick two or three directions to use most of the time and avoid swiping against your corner unless you have no other move.</p>
+<h2>Questions</h2>
+<details><summary>What is the goal?</summary><p>Create a tile with the number 2048. You can keep playing afterwards to reach an even higher score.</p></details>
+<details><summary>Can I undo a move?</summary><p>Yes, the Undo button takes back your last move. Only the latest move can be undone.</p></details>
+<details><summary>Do you store my score?</summary><p>Only your best score, on your own device, in your browser's local storage. Nothing is sent to a server. See the <a href="privacy.html">Privacy Policy</a>.</p></details>
 </section>
 
-<section aria-labelledby="also-title"><h2 id="also-title">Prueba también</h2><ul class="grid"><li class="card"><h3>Test de velocidad de clics</h3><p class="tag">Reflejos</p><p>¿Cuántos clics por segundo puedes hacer? Elige 5, 10 o 30 segundos.</p><a class="btn" href="test-velocidad-clics.html">Jugar ahora</a></li><li class="card"><h3>Lanzar una moneda</h3><p class="tag">Suerte</p><p>¿Cara o cruz? Lanza una moneda de oro o plata y lleva tus estadísticas.</p><a class="btn" href="lanzar-moneda.html">Jugar ahora</a></li><li class="card"><h3>Tap Flyer</h3><p class="tag">Arcade</p><p>Toca para volar entre las tuberías y supera tu mejor marca.</p><a class="btn" href="juego-tap-flyer.html">Jugar ahora</a></li><li class="card"><h3>Lanzador de dados</h3><p class="tag">Suerte</p><p>Lanza de 1 a 6 dados, de d4 a d20, con suma automática.</p><a class="btn" href="lanzador-de-dados.html">Jugar ahora</a></li></ul></section>
+<section aria-labelledby="also-title"><h2 id="also-title">Try these too</h2><ul class="grid"><li class="card"><h3>Click Speed Test</h3><p class="tag">Reflexes</p><p>How many clicks per second can you reach? Pick 5, 10 or 30 seconds.</p><a class="btn" href="game-click-speed-test.html">Play now</a></li><li class="card"><h3>Flip a Coin</h3><p class="tag">Luck</p><p>Heads or tails? Flip a gold or silver coin and keep your stats.</p><a class="btn" href="game-coin-flip.html">Play now</a></li><li class="card"><h3>Tap Flyer</h3><p class="tag">Arcade</p><p>Tap to fly through the gaps between the pipes and beat your best score.</p><a class="btn" href="game-tap-flyer.html">Play now</a></li><li class="card"><h3>Dice Roller</h3><p class="tag">Luck</p><p>Roll 1 to 6 dice, from d4 to d20, with an automatic total.</p><a class="btn" href="game-dice-roller.html">Play now</a></li></ul></section>
 
 <section class="tm-cta">
 <img src="assets/img/games/icon_tungsahurpuzzle.webp" width="84" height="84" loading="lazy" decoding="async" alt="Tung Sahur Puzzle app icon" style="border-radius:20px;margin-bottom:10px">
-<h2>¿Te gustan los puzles?</h2>
-<p style="color:var(--mute)">Prueba Tung Sahur Puzzle para Android: une las piezas, supera el cronómetro y desbloquea ilustraciones.</p>
-<div class="btns"><a class="btn main" href="https://play.google.com/store/apps/details?id=com.GarkoDEV.TungSahurPuzzle" target="_blank" rel="noopener noreferrer">Ver en Google Play</a><a class="btn" href="./#games">Ver mis juegos</a></div>
+<h2>Like puzzles?</h2>
+<p style="color:var(--mute)">Try Tung Sahur Puzzle for Android: match puzzle pieces, beat the timer and unlock artwork.</p>
+<div class="btns"><a class="btn main" href="https://play.google.com/store/apps/details?id=com.GarkoDEV.TungSahurPuzzle" target="_blank" rel="noopener noreferrer">View on Google Play</a><a class="btn" href="./#games">See my games</a></div>
 </section>
 </main>
 <div id="site-footer"></div>
@@ -99,7 +99,7 @@
 <script>
 (() => {
   const $ = (id) => document.getElementById(id);
-  const L = (en, es) => `${es}`;
+  const L = (en, es) => `${en}`;
   const isEs = () => document.documentElement.lang === "es";
   const N = 4, layer = $("tiles"), board = $("board"), ov = $("ov");
   const PAL = { 2: ["#eceaff", "#2b2760"], 4: ["#d9d4ff", "#2b2760"], 8: ["#b9b0ff", "#2b2760"], 16: ["#9a8ff5", "#fff"], 32: ["#7d70ee", "#fff"], 64: ["#5f51e0", "#fff"], 128: ["#ffe28a", "#4a3600"], 256: ["#ffd54a", "#4a3600"], 512: ["#ffc02e", "#4a3600"], 1024: ["#ff9f3a", "#3a2200"], 2048: ["#ff7a6b", "#fff"] };
@@ -228,7 +228,7 @@
 
   $("share").addEventListener("click", async () => {
     const msg = isEs() ? `Conseguí ${score} puntos en Tile Merge. ¿Me superas?` : `I scored ${score} in Tile Merge. Can you beat me?`;
-    const url = "https://garkodev.github.io/puzle-estilo-2048.html", b = $("share");
+    const url = "https://garkodev.github.io/game-tile-merge.html", b = $("share");
     try {
       if (navigator.share) await navigator.share({ text: msg, url });
       else { await navigator.clipboard.writeText(msg + " " + url); b.innerHTML = L("Copied!", "¡Copiado!"); setTimeout(() => { b.innerHTML = L("Share my score", "Compartir mi marca"); }, 1800); }

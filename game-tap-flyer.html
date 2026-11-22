@@ -4,9 +4,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Tap Flyer - Free Online Tap-to-Fly Game | GarkoDEV</title>
 <meta name="description" content="Tap to fly through the gaps in this free online arcade game. No download needed: play on your phone or computer and beat your best score.">
-<link rel="canonical" href="https://garkodev.github.io/tap-flyer.html"><link rel="alternate" hreflang="en" href="https://garkodev.github.io/tap-flyer.html"><link rel="alternate" hreflang="es" href="https://garkodev.github.io/juego-tap-flyer.html"><link rel="alternate" hreflang="x-default" href="https://garkodev.github.io/tap-flyer.html">
-<meta property="og:type" content="website"><meta property="og:title" content="Tap Flyer - Free Online Tap-to-Fly Game - GarkoDEV"><meta property="og:description" content="Tap to fly through the gaps and beat your best score. Free in your browser."><meta property="og:image" content="https://garkodev.github.io/assets/img/share/tap-flyer.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:url" content="https://garkodev.github.io/tap-flyer.html">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Tap Flyer - Free Online Tap-to-Fly Game - GarkoDEV"><meta name="twitter:description" content="Tap to fly through the gaps and beat your best score. Free in your browser."><meta name="twitter:image" content="https://garkodev.github.io/assets/img/share/tap-flyer.jpg">
+<link rel="canonical" href="https://garkodev.github.io/game-tap-flyer.html"><link rel="alternate" hreflang="en" href="https://garkodev.github.io/game-tap-flyer.html"><link rel="alternate" hreflang="es" href="https://garkodev.github.io/juego-tap-flyer.html"><link rel="alternate" hreflang="x-default" href="https://garkodev.github.io/game-tap-flyer.html">
+<meta property="og:type" content="website"><meta property="og:title" content="Tap Flyer - Free Online Tap-to-Fly Game - GarkoDEV"><meta property="og:description" content="Tap to fly through the gaps and beat your best score. Free in your browser."><meta property="og:image" content="https://garkodev.github.io/assets/img/share/game-tap-flyer.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:url" content="https://garkodev.github.io/game-tap-flyer.html">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Tap Flyer - Free Online Tap-to-Fly Game - GarkoDEV"><meta name="twitter:description" content="Tap to fly through the gaps and beat your best score. Free in your browser."><meta name="twitter:image" content="https://garkodev.github.io/assets/img/share/game-tap-flyer.jpg">
 <meta name="google-adsense-account" content="ca-pub-8471738047534504"><meta name="theme-color" content="#f7f8fc">
 <link rel="icon" href="assets/img/brand/icon_garkodev.webp" type="image/webp"><link rel="stylesheet" href="css/style.css?v=20261121">
 <script>try{if(localStorage.getItem("theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}</script>
@@ -62,7 +62,7 @@
 <details><summary>Do you store my score?</summary><p>Only on your own device, in your browser's local storage. Nothing is sent to a server. See the <a href="privacy.html">Privacy Policy</a>.</p></details>
 </section>
 
-<section aria-labelledby="also-title"><h2 id="also-title">Try these too</h2><ul class="grid"><li class="card"><h3>Click Speed Test</h3><p class="tag">Reflexes</p><p>How many clicks per second can you reach? Pick 5, 10 or 30 seconds.</p><a class="btn" href="click-speed-test.html">Play now</a></li><li class="card"><h3>Flip a Coin</h3><p class="tag">Luck</p><p>Heads or tails? Flip a gold or silver coin and keep your stats.</p><a class="btn" href="coin-flip.html">Play now</a></li><li class="card"><h3>Tile Merge</h3><p class="tag">Puzzle</p><p>A 2048-style puzzle: slide and merge tiles to reach 2048.</p><a class="btn" href="tile-merge.html">Play now</a></li><li class="card"><h3>Dice Roller</h3><p class="tag">Luck</p><p>Roll 1 to 6 dice, from d4 to d20, with an automatic total.</p><a class="btn" href="dice-roller.html">Play now</a></li></ul></section>
+<section aria-labelledby="also-title"><h2 id="also-title">Try these too</h2><ul class="grid"><li class="card"><h3>Click Speed Test</h3><p class="tag">Reflexes</p><p>How many clicks per second can you reach? Pick 5, 10 or 30 seconds.</p><a class="btn" href="game-click-speed-test.html">Play now</a></li><li class="card"><h3>Flip a Coin</h3><p class="tag">Luck</p><p>Heads or tails? Flip a gold or silver coin and keep your stats.</p><a class="btn" href="game-coin-flip.html">Play now</a></li><li class="card"><h3>Tile Merge</h3><p class="tag">Puzzle</p><p>A 2048-style puzzle: slide and merge tiles to reach 2048.</p><a class="btn" href="game-tile-merge.html">Play now</a></li><li class="card"><h3>Dice Roller</h3><p class="tag">Luck</p><p>Roll 1 to 6 dice, from d4 to d20, with an automatic total.</p><a class="btn" href="game-dice-roller.html">Play now</a></li></ul></section>
 
 <section class="tf-cta">
 <h2>Want more tapping games?</h2>
@@ -151,7 +151,7 @@
   });
   $("share").addEventListener("click", async () => {
     const msg = es() ? `Conseguí ${score} puntos en Tap Flyer. ¿Me superas?` : `I scored ${score} in Tap Flyer. Can you beat me?`;
-    const url = "https://garkodev.github.io/tap-flyer.html", b = $("share");
+    const url = "https://garkodev.github.io/game-tap-flyer.html", b = $("share");
     try {
       if (navigator.share) await navigator.share({ text: msg, url });
       else { await navigator.clipboard.writeText(msg + " " + url); b.innerHTML = L("Copied!", "¡Copiado!"); setTimeout(() => { b.innerHTML = L("Share my score", "Compartir mi marca"); }, 1800); }

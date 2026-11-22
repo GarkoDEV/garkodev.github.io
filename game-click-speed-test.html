@@ -4,9 +4,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Click Speed Test (CPS Test) - Free Online Game | GarkoDEV</title>
 <meta name="description" content="How fast can you click? Take the free click speed test (CPS test): pick 5, 10 or 30 seconds, tap as fast as you can and share your score.">
-<link rel="canonical" href="https://garkodev.github.io/click-speed-test.html"><link rel="alternate" hreflang="en" href="https://garkodev.github.io/click-speed-test.html"><link rel="alternate" hreflang="es" href="https://garkodev.github.io/test-velocidad-clics.html"><link rel="alternate" hreflang="x-default" href="https://garkodev.github.io/click-speed-test.html">
-<meta property="og:type" content="website"><meta property="og:title" content="Click Speed Test (CPS Test) - GarkoDEV"><meta property="og:description" content="How many clicks per second can you reach? Free online tapping challenge."><meta property="og:image" content="https://garkodev.github.io/assets/img/share/click-speed-test.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:url" content="https://garkodev.github.io/click-speed-test.html">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Click Speed Test (CPS Test) - GarkoDEV"><meta name="twitter:description" content="How many clicks per second can you reach? Free online tapping challenge."><meta name="twitter:image" content="https://garkodev.github.io/assets/img/share/click-speed-test.jpg">
+<link rel="canonical" href="https://garkodev.github.io/game-click-speed-test.html"><link rel="alternate" hreflang="en" href="https://garkodev.github.io/game-click-speed-test.html"><link rel="alternate" hreflang="es" href="https://garkodev.github.io/juego-test-velocidad-clics.html"><link rel="alternate" hreflang="x-default" href="https://garkodev.github.io/game-click-speed-test.html">
+<meta property="og:type" content="website"><meta property="og:title" content="Click Speed Test (CPS Test) - GarkoDEV"><meta property="og:description" content="How many clicks per second can you reach? Free online tapping challenge."><meta property="og:image" content="https://garkodev.github.io/assets/img/share/game-click-speed-test.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:url" content="https://garkodev.github.io/game-click-speed-test.html">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Click Speed Test (CPS Test) - GarkoDEV"><meta name="twitter:description" content="How many clicks per second can you reach? Free online tapping challenge."><meta name="twitter:image" content="https://garkodev.github.io/assets/img/share/game-click-speed-test.jpg">
 <meta name="google-adsense-account" content="ca-pub-8471738047534504"><meta name="theme-color" content="#f7f8fc">
 <link rel="icon" href="assets/img/brand/icon_garkodev.webp" type="image/webp"><link rel="stylesheet" href="css/style.css?v=20261121">
 <script>try{if(localStorage.getItem("theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}</script>
@@ -76,7 +76,7 @@
 <details><summary>Do you store my results?</summary><p>Only on your own device, in your browser's local storage. Nothing is sent to a server. See the <a href="privacy.html">Privacy Policy</a>.</p></details>
 </section>
 
-<section aria-labelledby="also-title"><h2 id="also-title">Try these too</h2><ul class="grid"><li class="card"><h3>Flip a Coin</h3><p class="tag">Luck</p><p>Heads or tails? Flip a gold or silver coin and keep your stats.</p><a class="btn" href="coin-flip.html">Play now</a></li><li class="card"><h3>Tap Flyer</h3><p class="tag">Arcade</p><p>Tap to fly through the gaps between the pipes and beat your best score.</p><a class="btn" href="tap-flyer.html">Play now</a></li><li class="card"><h3>Tile Merge</h3><p class="tag">Puzzle</p><p>A 2048-style puzzle: slide and merge tiles to reach 2048.</p><a class="btn" href="tile-merge.html">Play now</a></li><li class="card"><h3>Dice Roller</h3><p class="tag">Luck</p><p>Roll 1 to 6 dice, from d4 to d20, with an automatic total.</p><a class="btn" href="dice-roller.html">Play now</a></li></ul></section>
+<section aria-labelledby="also-title"><h2 id="also-title">Try these too</h2><ul class="grid"><li class="card"><h3>Flip a Coin</h3><p class="tag">Luck</p><p>Heads or tails? Flip a gold or silver coin and keep your stats.</p><a class="btn" href="game-coin-flip.html">Play now</a></li><li class="card"><h3>Tap Flyer</h3><p class="tag">Arcade</p><p>Tap to fly through the gaps between the pipes and beat your best score.</p><a class="btn" href="game-tap-flyer.html">Play now</a></li><li class="card"><h3>Tile Merge</h3><p class="tag">Puzzle</p><p>A 2048-style puzzle: slide and merge tiles to reach 2048.</p><a class="btn" href="game-tile-merge.html">Play now</a></li><li class="card"><h3>Dice Roller</h3><p class="tag">Luck</p><p>Roll 1 to 6 dice, from d4 to d20, with an automatic total.</p><a class="btn" href="game-dice-roller.html">Play now</a></li></ul></section>
 
 <section class="cps-cta">
 <h2>Like tapping games?</h2>
@@ -142,7 +142,7 @@
     const msg = isEs()
       ? `Hice ${last.toFixed(2)} CPS en ${dur} segundos. ¿Me superas?`
       : `I got ${last.toFixed(2)} CPS in ${dur} seconds. Can you beat me?`;
-    const url = "https://garkodev.github.io/click-speed-test.html";
+    const url = "https://garkodev.github.io/game-click-speed-test.html";
     try {
       if (navigator.share) await navigator.share({ text: msg, url });
       else { await navigator.clipboard.writeText(msg + " " + url); share.innerHTML = L("Copied!", "¡Copiado!"); setTimeout(() => { share.innerHTML = L("Share my score", "Compartir mi marca"); }, 1800); }

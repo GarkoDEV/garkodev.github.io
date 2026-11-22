@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="es"><head>
+<html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Lanzar una Moneda Online - Cara o Cruz | GarkoDEV</title>
-<meta name="description" content="Lanza una moneda online: cara o cruz con un resultado justo 50/50. Elige moneda de oro o plata, mira tus estadísticas y decide con un toque.">
-<link rel="canonical" href="https://garkodev.github.io/lanzar-moneda.html"><link rel="alternate" hreflang="en" href="https://garkodev.github.io/coin-flip.html"><link rel="alternate" hreflang="es" href="https://garkodev.github.io/lanzar-moneda.html"><link rel="alternate" hreflang="x-default" href="https://garkodev.github.io/coin-flip.html">
-<meta property="og:type" content="website"><meta property="og:title" content="Lanzar una Moneda Online - Cara o Cruz - GarkoDEV"><meta property="og:description" content="¿Cara o cruz? Lanza una moneda online y decide con un toque."><meta property="og:image" content="https://garkodev.github.io/assets/img/share/lanzar-moneda.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:url" content="https://garkodev.github.io/lanzar-moneda.html">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Lanzar una Moneda Online - Cara o Cruz - GarkoDEV"><meta name="twitter:description" content="¿Cara o cruz? Lanza una moneda online y decide con un toque."><meta name="twitter:image" content="https://garkodev.github.io/assets/img/share/lanzar-moneda.jpg">
+<title>Flip a Coin Online - Heads or Tails | GarkoDEV</title>
+<meta name="description" content="Flip a coin online: heads or tails with a fair 50/50 result. Choose a gold or silver coin, see your stats and decide in one tap.">
+<link rel="canonical" href="https://garkodev.github.io/game-coin-flip.html"><link rel="alternate" hreflang="en" href="https://garkodev.github.io/game-coin-flip.html"><link rel="alternate" hreflang="es" href="https://garkodev.github.io/juego-lanzar-moneda.html"><link rel="alternate" hreflang="x-default" href="https://garkodev.github.io/game-coin-flip.html">
+<meta property="og:type" content="website"><meta property="og:title" content="Flip a Coin Online - Heads or Tails - GarkoDEV"><meta property="og:description" content="Heads or tails? Flip a coin online and decide in one tap."><meta property="og:image" content="https://garkodev.github.io/assets/img/share/game-coin-flip.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:url" content="https://garkodev.github.io/game-coin-flip.html">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Flip a Coin Online - Heads or Tails - GarkoDEV"><meta name="twitter:description" content="Heads or tails? Flip a coin online and decide in one tap."><meta name="twitter:image" content="https://garkodev.github.io/assets/img/share/game-coin-flip.jpg">
 <meta name="google-adsense-account" content="ca-pub-8471738047534504"><meta name="theme-color" content="#f7f8fc">
 <link rel="icon" href="assets/img/brand/icon_garkodev.webp" type="image/webp"><link rel="stylesheet" href="css/style.css?v=20261121">
 <script>try{if(localStorage.getItem("theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}</script>
@@ -43,51 +43,51 @@
 @media(prefers-reduced-motion:reduce){.coin{transition:none}.cw.hop{animation:none}}
 </style>
 </head><body>
-<a class="skip" href="#main">Saltar al contenido</a>
+<a class="skip" href="#main">Skip to content</a>
 <div id="site-header"></div>
-<noscript><nav class="noscript-nav wrap" aria-label="Navegación principal"><a href="./">Inicio</a><a href="./#games">Juegos</a><a href="./#contact">Contacto</a><a href="privacy.html">Privacidad</a><a href="terms.html">Términos</a></nav></noscript>
+<noscript><nav class="noscript-nav wrap" aria-label="Main navigation"><a href="./">Home</a><a href="./#games">Games</a><a href="./#contact">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav></noscript>
 <main id="main" class="wrap">
 
 <section class="cf-intro">
-<h1>Lanza una moneda online</h1>
-<p>¿Cara o cruz? Lanza una moneda con un toque para decidir algo, elegir quién empieza o simplemente divertirte. Elige una moneda de oro o de plata y lleva la cuenta de tus caras y cruces. Es gratis y no necesita registro.</p>
+<h1>Flip a Coin Online</h1>
+<p>Heads or tails? Flip a coin in one tap to settle a decision, pick who goes first or just have fun. Choose a gold or silver coin and keep track of your heads and tails. It is free and needs no sign-up.</p>
 </section>
 
 <section class="cf-card" aria-labelledby="game-title">
-<h2 id="game-title" style="margin:0 0 14px;font-size:1.2rem">Tu moneda</h2>
-<div class="metals" role="group" aria-label="Moneda"><button type="button" data-m="gold" aria-pressed="true">Oro</button><button type="button" data-m="silver" aria-pressed="false">Plata</button></div>
-<div class="cw" id="cw"><div class="coin" id="coin" data-m="gold"><div class="face h">CARA</div><div class="face t">CRUZ</div></div></div>
+<h2 id="game-title" style="margin:0 0 14px;font-size:1.2rem">Your coin</h2>
+<div class="metals" role="group" aria-label="Coin"><button type="button" data-m="gold" aria-pressed="true">Gold</button><button type="button" data-m="silver" aria-pressed="false">Silver</button></div>
+<div class="cw" id="cw"><div class="coin" id="coin" data-m="gold"><div class="face h">HEADS</div><div class="face t">TAILS</div></div></div>
 <div id="res" role="status" aria-live="polite"></div>
-<button id="flip" class="btn main" type="button">Lanzar la moneda</button>
+<button id="flip" class="btn main" type="button">Flip the coin</button>
 <div class="stats">
-<div><b id="h">0</b><span>Caras</span></div>
-<div><b id="t">0</b><span>Cruces</span></div>
-<div><b id="n">0</b><span>Lanzamientos</span></div>
+<div><b id="h">0</b><span>Heads</span></div>
+<div><b id="t">0</b><span>Tails</span></div>
+<div><b id="n">0</b><span>Flips</span></div>
 </div>
-<ul id="hist" aria-label="Últimos lanzamientos"></ul>
-<button id="reset" type="button">Reiniciar estadísticas</button>
+<ul id="hist" aria-label="Last flips"></ul>
+<button id="reset" type="button">Reset stats</button>
 </section>
 
 <section class="cf-info">
-<h2>Cómo funciona</h2>
+<h2>How it works</h2>
 <ol>
-<li>Elige una moneda de oro o de plata.</li>
-<li>Toca la moneda o el botón para lanzarla.</li>
-<li>El resultado se elige al azar, con un 50 % de probabilidad para cara y un 50 % para cruz, y tus estadísticas se guardan en este navegador.</li>
+<li>Pick a gold or silver coin.</li>
+<li>Tap the coin or the button to flip it.</li>
+<li>The result is chosen at random with a 50% chance for heads and 50% for tails, and your stats are saved in this browser.</li>
 </ol>
-<h2>Preguntas frecuentes</h2>
-<details><summary>¿Es justo el lanzamiento?</summary><p>Sí. Cada lanzamiento usa el generador de números aleatorios de tu navegador, así que cara y cruz son igual de probables y cada tirada es independiente de la anterior.</p></details>
-<details><summary>¿Por qué a veces sale lo mismo varias veces seguidas?</summary><p>Las rachas son normales en los resultados aleatorios. Con pocos lanzamientos es fácil ver 4 o 5 veces el mismo lado. El equilibrio solo aparece con muchos lanzamientos.</p></details>
-<details><summary>¿Guardáis mis resultados?</summary><p>Solo en tu propio dispositivo, en el almacenamiento local del navegador. No se envía nada a ningún servidor. Consulta la <a href="privacy.html">Política de privacidad</a>.</p></details>
+<h2>Questions</h2>
+<details><summary>Is the coin flip fair?</summary><p>Yes. Each flip uses your browser's random number generator, so heads and tails are equally likely and every flip is independent of the previous one.</p></details>
+<details><summary>Why do I sometimes get the same result many times in a row?</summary><p>Streaks are normal in random results. Over a small number of flips you can easily see 4 or 5 of the same side. The balance only evens out over many flips.</p></details>
+<details><summary>Do you store my results?</summary><p>Only on your own device, in your browser's local storage. Nothing is sent to a server. See the <a href="privacy.html">Privacy Policy</a>.</p></details>
 </section>
 
-<section aria-labelledby="also-title"><h2 id="also-title">Prueba también</h2><ul class="grid"><li class="card"><h3>Test de velocidad de clics</h3><p class="tag">Reflejos</p><p>¿Cuántos clics por segundo puedes hacer? Elige 5, 10 o 30 segundos.</p><a class="btn" href="test-velocidad-clics.html">Jugar ahora</a></li><li class="card"><h3>Tap Flyer</h3><p class="tag">Arcade</p><p>Toca para volar entre las tuberías y supera tu mejor marca.</p><a class="btn" href="juego-tap-flyer.html">Jugar ahora</a></li><li class="card"><h3>Tile Merge</h3><p class="tag">Puzle</p><p>Un puzle estilo 2048: desliza y une fichas hasta llegar a 2048.</p><a class="btn" href="puzle-estilo-2048.html">Jugar ahora</a></li><li class="card"><h3>Lanzador de dados</h3><p class="tag">Suerte</p><p>Lanza de 1 a 6 dados, de d4 a d20, con suma automática.</p><a class="btn" href="lanzador-de-dados.html">Jugar ahora</a></li></ul></section>
+<section aria-labelledby="also-title"><h2 id="also-title">Try these too</h2><ul class="grid"><li class="card"><h3>Click Speed Test</h3><p class="tag">Reflexes</p><p>How many clicks per second can you reach? Pick 5, 10 or 30 seconds.</p><a class="btn" href="game-click-speed-test.html">Play now</a></li><li class="card"><h3>Tap Flyer</h3><p class="tag">Arcade</p><p>Tap to fly through the gaps between the pipes and beat your best score.</p><a class="btn" href="game-tap-flyer.html">Play now</a></li><li class="card"><h3>Tile Merge</h3><p class="tag">Puzzle</p><p>A 2048-style puzzle: slide and merge tiles to reach 2048.</p><a class="btn" href="game-tile-merge.html">Play now</a></li><li class="card"><h3>Dice Roller</h3><p class="tag">Luck</p><p>Roll 1 to 6 dice, from d4 to d20, with an automatic total.</p><a class="btn" href="game-dice-roller.html">Play now</a></li></ul></section>
 
 <section class="cf-cta">
 <img src="assets/img/games/icon_coinflip.webp" width="84" height="84" loading="lazy" decoding="async" alt="Coin Flip Simulator app icon" style="border-radius:20px;margin-bottom:10px">
-<h2>¿La quieres en el móvil?</h2>
-<p style="color:var(--mute)">Prueba Coin Flip Simulator para Android: monedas de oro o plata con animaciones, sonidos y un contador de caras y cruces.</p>
-<div class="btns"><a class="btn main" href="https://play.google.com/store/apps/details?id=com.GarkoDEV.CoinFlip" target="_blank" rel="noopener noreferrer">Ver en Google Play</a><a class="btn" href="./#games">Ver mis juegos</a></div>
+<h2>Want it on your phone?</h2>
+<p style="color:var(--mute)">Try Coin Flip Simulator for Android: gold or silver coins with animations, sounds and a heads-and-tails counter.</p>
+<div class="btns"><a class="btn main" href="https://play.google.com/store/apps/details?id=com.GarkoDEV.CoinFlip" target="_blank" rel="noopener noreferrer">View on Google Play</a><a class="btn" href="./#games">See my games</a></div>
 </section>
 </main>
 <div id="site-footer"></div>
@@ -96,7 +96,7 @@
 (() => {
   const $ = (id) => document.getElementById(id);
   const coin = $("coin"), wrap = $("cw"), res = $("res"), hist = $("hist"), flipBtn = $("flip");
-  const L = (en, es) => `${es}`;
+  const L = (en, es) => `${en}`;
   const rnd = () => crypto.getRandomValues(new Uint8Array(1))[0];
   let s = { h: 0, t: 0, seq: [] }, rot = 0, busy = false;
 

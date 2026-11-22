@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="es"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Dice Roller Online - Roll 1 to 6 Dice (d4 to d20) | GarkoDEV</title>
-<meta name="description" content="Roll dice online: choose 1 to 6 dice, from d4 to d20, and see each result and the total instantly. Free dice roller for board games and RPGs.">
-<link rel="canonical" href="https://garkodev.github.io/dice-roller.html"><link rel="alternate" hreflang="en" href="https://garkodev.github.io/dice-roller.html"><link rel="alternate" hreflang="es" href="https://garkodev.github.io/lanzador-de-dados.html"><link rel="alternate" hreflang="x-default" href="https://garkodev.github.io/dice-roller.html">
-<meta property="og:type" content="website"><meta property="og:title" content="Dice Roller Online - GarkoDEV"><meta property="og:description" content="Roll 1 to 6 dice, from d4 to d20, with an automatic total. Free in your browser."><meta property="og:image" content="https://garkodev.github.io/assets/img/share/dice-roller.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:url" content="https://garkodev.github.io/dice-roller.html">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Dice Roller Online - GarkoDEV"><meta name="twitter:description" content="Roll 1 to 6 dice, from d4 to d20, with an automatic total. Free in your browser."><meta name="twitter:image" content="https://garkodev.github.io/assets/img/share/dice-roller.jpg">
+<title>Lanzador de Dados Online - De 1 a 6 Dados (d4 a d20) | GarkoDEV</title>
+<meta name="description" content="Lanza dados online: elige de 1 a 6 dados, de d4 a d20, y mira cada resultado y el total al instante. Lanzador de dados gratis para juegos de mesa y rol.">
+<link rel="canonical" href="https://garkodev.github.io/juego-lanzador-de-dados.html"><link rel="alternate" hreflang="en" href="https://garkodev.github.io/game-dice-roller.html"><link rel="alternate" hreflang="es" href="https://garkodev.github.io/juego-lanzador-de-dados.html"><link rel="alternate" hreflang="x-default" href="https://garkodev.github.io/game-dice-roller.html">
+<meta property="og:type" content="website"><meta property="og:title" content="Lanzador de Dados Online - GarkoDEV"><meta property="og:description" content="Lanza de 1 a 6 dados, de d4 a d20, con suma automática. Gratis en tu navegador."><meta property="og:image" content="https://garkodev.github.io/assets/img/share/juego-lanzador-de-dados.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:url" content="https://garkodev.github.io/juego-lanzador-de-dados.html">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Lanzador de Dados Online - GarkoDEV"><meta name="twitter:description" content="Lanza de 1 a 6 dados, de d4 a d20, con suma automática. Gratis en tu navegador."><meta name="twitter:image" content="https://garkodev.github.io/assets/img/share/juego-lanzador-de-dados.jpg">
 <meta name="google-adsense-account" content="ca-pub-8471738047534504"><meta name="theme-color" content="#f7f8fc">
 <link rel="icon" href="assets/img/brand/icon_garkodev.webp" type="image/webp"><link rel="stylesheet" href="css/style.css?v=20261121">
 <script>try{if(localStorage.getItem("theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}</script>
@@ -41,47 +41,47 @@
 @media(prefers-reduced-motion:reduce){.die.r{animation:none}}
 </style>
 </head><body>
-<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#main">Saltar al contenido</a>
 <div id="site-header"></div>
-<noscript><nav class="noscript-nav wrap" aria-label="Main navigation"><a href="./">Home</a><a href="./#games">Games</a><a href="./#contact">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></nav></noscript>
+<noscript><nav class="noscript-nav wrap" aria-label="Navegación principal"><a href="./">Inicio</a><a href="./#games">Juegos</a><a href="./#contact">Contacto</a><a href="privacy.html">Privacidad</a><a href="terms.html">Términos</a></nav></noscript>
 <main id="main" class="wrap">
 
 <section class="dr-intro">
-<h1>Dice Roller Online</h1>
-<p>Roll one to six dice and get every result plus the total instantly. Use classic six-sided dice for board games, or switch to d4, d8, d10, d12 and d20 for tabletop RPGs. It is free and needs no sign-up.</p>
+<h1>Lanzador de dados online</h1>
+<p>Lanza de uno a seis dados y obtén cada resultado y el total al instante. Usa dados clásicos de seis caras para juegos de mesa o cambia a d4, d8, d10, d12 y d20 para juegos de rol. Es gratis y no necesita registro.</p>
 </section>
 
 <section class="dr-card" aria-labelledby="game-title">
-<h2 id="game-title" style="margin:0 0 14px;font-size:1.2rem">Your dice</h2>
-<div class="opt"><p>Number of dice</p><div id="cnt" role="group" aria-label="Number of dice"></div></div>
-<div class="opt"><p>Sides</p><div id="sid" role="group" aria-label="Sides"></div></div>
+<h2 id="game-title" style="margin:0 0 14px;font-size:1.2rem">Tus dados</h2>
+<div class="opt"><p>Número de dados</p><div id="cnt" role="group" aria-label="Número de dados"></div></div>
+<div class="opt"><p>Caras</p><div id="sid" role="group" aria-label="Caras"></div></div>
 <div class="dice" id="dice" aria-hidden="true"></div>
 <div class="total">Total<b id="total">-</b></div>
 <div id="res" role="status" aria-live="polite"></div>
-<button id="roll" class="btn main" type="button">Roll the dice</button>
-<ul id="hist" aria-label="Last rolls"></ul>
+<button id="roll" class="btn main" type="button">Lanzar los dados</button>
+<ul id="hist" aria-label="Últimos lanzamientos"></ul>
 </section>
 
 <section class="dr-info">
-<h2>How it works</h2>
+<h2>Cómo funciona</h2>
 <ol>
-<li>Choose how many dice you want (1 to 6) and how many sides they have.</li>
-<li>Tap the button or the dice to roll them.</li>
-<li>Each die shows its own result and the total is added up for you. Your last rolls stay listed below.</li>
+<li>Elige cuántos dados quieres (de 1 a 6) y cuántas caras tienen.</li>
+<li>Toca el botón o los dados para lanzarlos.</li>
+<li>Cada dado muestra su resultado y el total se suma automáticamente. Tus últimos lanzamientos quedan en la lista.</li>
 </ol>
-<h2>Questions</h2>
-<details><summary>Are the rolls fair?</summary><p>Yes. Each die uses your browser's random number generator, so every face is equally likely and every die is independent of the others.</p></details>
-<details><summary>Can I use it for role-playing games?</summary><p>Yes. Pick d20 for attack and skill checks, d4 to d12 for damage, and up to six dice at once for bigger rolls like fireballs.</p></details>
-<details><summary>Do you store my rolls?</summary><p>No. Rolls are only shown on your screen while you use the page and are not saved or sent anywhere. See the <a href="privacy.html">Privacy Policy</a>.</p></details>
+<h2>Preguntas frecuentes</h2>
+<details><summary>¿Son justos los lanzamientos?</summary><p>Sí. Cada dado usa el generador de números aleatorios de tu navegador, así que todas las caras son igual de probables y cada dado es independiente de los demás.</p></details>
+<details><summary>¿Sirve para juegos de rol?</summary><p>Sí. Elige d20 para ataques y pruebas de habilidad, de d4 a d12 para el daño y hasta seis dados a la vez para tiradas grandes.</p></details>
+<details><summary>¿Guardáis mis lanzamientos?</summary><p>No. Los lanzamientos solo se muestran en tu pantalla mientras usas la página y no se guardan ni se envían a ningún sitio. Consulta la <a href="privacy.html">Política de privacidad</a>.</p></details>
 </section>
 
-<section aria-labelledby="also-title"><h2 id="also-title">Try these too</h2><ul class="grid"><li class="card"><h3>Click Speed Test</h3><p class="tag">Reflexes</p><p>How many clicks per second can you reach? Pick 5, 10 or 30 seconds.</p><a class="btn" href="click-speed-test.html">Play now</a></li><li class="card"><h3>Flip a Coin</h3><p class="tag">Luck</p><p>Heads or tails? Flip a gold or silver coin and keep your stats.</p><a class="btn" href="coin-flip.html">Play now</a></li><li class="card"><h3>Tap Flyer</h3><p class="tag">Arcade</p><p>Tap to fly through the gaps between the pipes and beat your best score.</p><a class="btn" href="tap-flyer.html">Play now</a></li><li class="card"><h3>Tile Merge</h3><p class="tag">Puzzle</p><p>A 2048-style puzzle: slide and merge tiles to reach 2048.</p><a class="btn" href="tile-merge.html">Play now</a></li></ul></section>
+<section aria-labelledby="also-title"><h2 id="also-title">Prueba también</h2><ul class="grid"><li class="card"><h3>Test de velocidad de clics</h3><p class="tag">Reflejos</p><p>¿Cuántos clics por segundo puedes hacer? Elige 5, 10 o 30 segundos.</p><a class="btn" href="juego-test-velocidad-clics.html">Jugar ahora</a></li><li class="card"><h3>Lanzar una moneda</h3><p class="tag">Suerte</p><p>¿Cara o cruz? Lanza una moneda de oro o plata y lleva tus estadísticas.</p><a class="btn" href="juego-lanzar-moneda.html">Jugar ahora</a></li><li class="card"><h3>Tap Flyer</h3><p class="tag">Arcade</p><p>Toca para volar entre las tuberías y supera tu mejor marca.</p><a class="btn" href="juego-tap-flyer.html">Jugar ahora</a></li><li class="card"><h3>Tile Merge</h3><p class="tag">Puzle</p><p>Un puzle estilo 2048: desliza y une fichas hasta llegar a 2048.</p><a class="btn" href="juego-tile-merge.html">Jugar ahora</a></li></ul></section>
 
 <section class="dr-cta">
 <img src="assets/img/games/icon_randomdice.webp" width="84" height="84" loading="lazy" decoding="async" alt="Random Dice - Tap to Roll app icon" style="border-radius:20px;margin-bottom:10px">
-<h2>Want dice on your phone?</h2>
-<p style="color:var(--mute)">Try Random Dice - Tap to Roll for Android: roll 1 to 6 dice with animation, sound and an automatic total.</p>
-<div class="btns"><a class="btn main" href="https://play.google.com/store/apps/details?id=com.GarkoDEV.RandomDice2" target="_blank" rel="noopener noreferrer">View on Google Play</a><a class="btn" href="./#games">See my games</a></div>
+<h2>¿Quieres dados en el móvil?</h2>
+<p style="color:var(--mute)">Prueba Random Dice - Tap to Roll para Android: lanza de 1 a 6 dados con animación, sonido y suma automática.</p>
+<div class="btns"><a class="btn main" href="https://play.google.com/store/apps/details?id=com.GarkoDEV.RandomDice2" target="_blank" rel="noopener noreferrer">Ver en Google Play</a><a class="btn" href="./#games">Ver mis juegos</a></div>
 </section>
 </main>
 <div id="site-footer"></div>
