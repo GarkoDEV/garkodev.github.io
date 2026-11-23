@@ -2,6 +2,16 @@
 (() => {
   "use strict";
 
+  // Analítica sin cookies (GoatCounter). Con "" no se carga nada y no se cuenta ninguna visita.
+  const GOATCOUNTER_CODE = "garkodev";
+  if (GOATCOUNTER_CODE) {
+    const analytics = document.createElement("script");
+    analytics.async = true;
+    analytics.dataset.goatcounter = `https://${GOATCOUNTER_CODE}.goatcounter.com/count`;
+    analytics.src = "https://gc.zgo.at/count.js";
+    document.head.appendChild(analytics);
+  }
+
   const text = (en, es) => `<span class="en">${en}</span><span class="es">${es}</span>`;
   const page = (location.pathname.split("/").pop() || "index").replace(".html", "");
   const active = ["privacy", "terms", "404"].includes(page) ? page : page === "index" ? "home" : "";
@@ -95,5 +105,49 @@
       try { localStorage.setItem("garkodev-taps", String(total)); } catch (_) { /* Counter still works for this visit. */ }
       renderCount();
     });
+  }
+
+  // Contadores públicos de visitas (GoatCounter). Solo se muestran cuando la cifra ya es presentable.
+  // Requiere activar "Allow adding visitor counts on your website" en los ajustes de GoatCounter.
+  const TOTAL_MIN = 300; // visitas totales de la web a partir de las cuales se enseña el total en el pie
+  const PAGE_MIN = 100;  // visitas de una página de juego a partir de las cuales se enseña su contador
+  if (GOATCOUNTER_CODE) {
+    const counterBase = `https://${GOATCOUNTER_CODE}.goatcounter.com/counter/`;
+    const readCount = (path) => fetch(`${counterBase}${encodeURIComponent(path)}.json`)
+      .then((response) => (response.ok ? response.json() : null))
+      .then((data) => (data && data.count ? Number(String(data.count).replace(/\D/g, "")) || 0 : 0))
+      .catch(() => 0);
+    const formatCount = (n, lang) => n.toLocaleString(lang);
+    // GoatCounter cuenta la página con la ruta de su <link rel="canonical"> si es del mismo dominio.
+    let countedPath = location.pathname;
+    try {
+      const canonicalLink = document.querySelector('link[rel="canonical"][href]');
+      if (canonicalLink) {
+        const canonicalUrl = new URL(canonicalLink.href);
+        if (canonicalUrl.hostname === location.hostname) countedPath = canonicalUrl.pathname;
+      }
+    } catch (_) { /* Si falla, se usa la ruta actual. */ }
+
+    readCount("TOTAL").then((n) => {
+      const footerWrap = document.querySelector("footer.site .wrap");
+      if (n >= TOTAL_MIN && footerWrap) {
+        const total = document.createElement("span");
+        total.innerHTML = text(`${formatCount(n, "en")} site visits`, `${formatCount(n, "es")} visitas a la web`);
+        footerWrap.appendChild(total);
+      }
+    });
+
+    if (/^\/(game|juego|android-game|juego-android)-/.test(countedPath)) {
+      readCount(countedPath).then((n) => {
+        const title = document.querySelector("main h1");
+        if (n >= PAGE_MIN && title) {
+          const line = document.createElement("p");
+          line.className = "visit-count";
+          line.style.cssText = "color:var(--mute);font-size:.9rem;margin:-4px 0 10px";
+          line.innerHTML = text(`${formatCount(n, "en")} visits to this page`, `${formatCount(n, "es")} visitas a esta página`);
+          title.insertAdjacentElement("afterend", line);
+        }
+      });
+    }
   }
 })();
