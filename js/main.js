@@ -34,10 +34,10 @@
   const footer = document.getElementById("site-footer");
   if (footer) footer.innerHTML = `<footer class="site"><div class="wrap"><span>© ${new Date().getFullYear()} GarkoDEV</span><span>${text("Made independently in Spain.", "Hecho de forma independiente en España.")}</span><span><a href="privacy.html">${text("Privacy policy", "Privacidad")}</a> · <a href="terms.html">${text("Terms", "Términos")}</a> · <a href="app-ads.txt">app-ads.txt</a></span></div></footer>`;
 
-  const setLanguage = (language) => {
+  const setLanguage = (language, persist = true) => {
     const lang = language === "es" ? "es" : "en";
     document.documentElement.lang = lang;
-    try { localStorage.setItem("lang", lang); } catch (_) { /* Storage may be disabled. */ }
+    if (persist) { try { localStorage.setItem("lang", lang); } catch (_) { /* Storage may be disabled. */ } }
     document.querySelectorAll(".lang [data-lang]").forEach((button) => {
       button.setAttribute("aria-pressed", String(button.dataset.lang === lang));
     });
@@ -66,7 +66,7 @@
       setLanguage(target);
     });
   });
-  setLanguage(document.documentElement.lang);
+  setLanguage(document.documentElement.lang, false);
 
   const themeButton = document.querySelector("[data-theme-toggle]");
   const themeColor = document.querySelector('meta[name="theme-color"]');
@@ -88,6 +88,20 @@
       try { localStorage.setItem("theme", dark ? "light" : "dark"); } catch (_) { /* Theme still changes for this visit. */ }
       updateThemeButton();
     });
+  }
+
+  // Si no has elegido tema a mano, la web sigue los cambios del sistema (claro/oscuro).
+  if (typeof matchMedia === "function") {
+    const systemDark = matchMedia("(prefers-color-scheme: dark)");
+    const followSystem = (event) => {
+      let saved = null;
+      try { saved = localStorage.getItem("theme"); } catch (_) { /* Storage may be disabled. */ }
+      if (saved === "dark" || saved === "light") return;
+      if (event.matches) document.documentElement.dataset.theme = "dark";
+      else delete document.documentElement.dataset.theme;
+      updateThemeButton();
+    };
+    if (systemDark.addEventListener) systemDark.addEventListener("change", followSystem);
   }
 
   const tap = document.getElementById("tap");
